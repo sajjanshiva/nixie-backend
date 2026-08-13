@@ -1,0 +1,1118 @@
+{
+  "Straight dress": {
+    "weight": 1,
+    "metreage": 1.8,
+    "metreageWeight": 2,
+    "lining": 1.35,
+    "liningWeight": 0.8,
+    "category": "Dress",
+    "description": "Falls straight from shoulder to hem with no waist shaping and minimal darts."
+  },
+  "A-line mini / midi dress": {
+    "weight": 1,
+    "metreage": 2,
+    "metreageWeight": 2,
+    "lining": 1.5,
+    "liningWeight": 0.8,
+    "category": "Dress",
+    "description": "Fitted through the bodice, then flares gently outward from the waist to a mini or midi length."
+  },
+  "Shift dress": {
+    "weight": 1,
+    "metreage": 1.7,
+    "metreageWeight": 2,
+    "lining": 1.275,
+    "liningWeight": 0.8,
+    "category": "Dress",
+    "description": "A loose, boxy shape with no defined waistline."
+  },
+  "Basic cotton dress": {
+    "weight": 1,
+    "metreage": 1.7,
+    "metreageWeight": 2,
+    "lining": 1.275,
+    "liningWeight": 0.8,
+    "category": "Dress",
+    "description": "A casual, plain dress in cotton fabric with no embellishment."
+  },
+  "Simple T-shirt dress": {
+    "weight": 1,
+    "metreage": 1.7,
+    "metreageWeight": 2,
+    "lining": 1.275,
+    "liningWeight": 0.8,
+    "category": "Dress",
+    "description": "A casual, jersey-like dress with a T-shirt-style neckline and simple straight cut."
+  },
+  "Slip dress without lining": {
+    "weight": 1,
+    "metreage": 1.7,
+    "metreageWeight": 2,
+    "lining": 1.275,
+    "liningWeight": 0.8,
+    "category": "Dress",
+    "description": "Thin spaghetti straps with a slip-style cut and no separate inner lining."
+  },
+  "Bias-cut plain dress": {
+    "weight": 1,
+    "metreage": 2,
+    "metreageWeight": 2,
+    "lining": 1.5,
+    "liningWeight": 0.8,
+    "category": "Dress",
+    "description": "Fabric cut on the diagonal grain for a soft, fluid, body-skimming drape."
+  },
+  "Boxy dress": {
+    "weight": 1,
+    "metreage": 1.55,
+    "metreageWeight": 2,
+    "lining": 1.1625,
+    "liningWeight": 0.8,
+    "category": "Dress",
+    "description": "A loose, unfitted, boxy silhouette with no waist definition."
+  },
+  "Tube dress (straight, no shaping)": {
+    "weight": 1,
+    "metreage": 1.35,
+    "metreageWeight": 1,
+    "lining": 1.0125,
+    "liningWeight": 0.8,
+    "category": "Dress",
+    "description": "A strapless straight tube shape with no shaping at the waist."
+  },
+  "Cowl neck top (plain)": {
+    "weight": 1,
+    "metreage": 0.8,
+    "metreageWeight": 1,
+    "lining": 0.6,
+    "liningWeight": 0.5,
+    "category": "Top",
+    "description": "Soft folds of fabric gathered loosely at the neckline."
+  },
+  "Spaghetti top": {
+    "weight": 1,
+    "metreage": 0.55,
+    "metreageWeight": 1,
+    "lining": 0.4125,
+    "liningWeight": 0.5,
+    "category": "Top",
+    "description": "Very thin spaghetti straps and a sleeveless cut."
+  },
+  "Tank top": {
+    "weight": 1,
+    "metreage": 0.7,
+    "metreageWeight": 1,
+    "lining": 0.525,
+    "liningWeight": 0.5,
+    "category": "Top",
+    "description": "Wide straps, sleeveless, plain and simple."
+  },
+  "Halter basic top": {
+    "weight": 1,
+    "metreage": 0.7,
+    "metreageWeight": 1,
+    "lining": 0.525,
+    "liningWeight": 0.5,
+    "category": "Top",
+    "description": "Straps that tie or fasten behind the neck, leaving the back open."
+  },
+  "Tube top": {
+    "weight": 1,
+    "metreage": 0.55,
+    "metreageWeight": 1,
+    "lining": 0.4125,
+    "liningWeight": 0.5,
+    "category": "Top",
+    "description": "A strapless tube shape with no straps at all."
+  },
+  "Basic off-shoulder top": {
+    "weight": 1,
+    "metreage": 0.9,
+    "metreageWeight": 1,
+    "lining": 0.675,
+    "liningWeight": 0.5,
+    "category": "Top",
+    "description": "A neckline sitting below both shoulders, with no visible straps."
+  },
+  "Peplum (simple, no structure)": {
+    "weight": 1,
+    "metreage": 1.1,
+    "metreageWeight": 1,
+    "lining": 0.825,
+    "liningWeight": 0.5,
+    "category": "Top",
+    "description": "A soft flared ruffle flowing out from the waist, unstructured."
+  },
+  "Basic shirt": {
+    "weight": 1,
+    "metreage": 2,
+    "metreageWeight": 2,
+    "lining": 1.5,
+    "liningWeight": 0.8,
+    "category": "Top",
+    "description": "A classic collared, button-front shirt with no embellishment."
+  },
+  "Basic button-down blouse": {
+    "weight": 1,
+    "metreage": 2,
+    "metreageWeight": 2,
+    "lining": 1.5,
+    "liningWeight": 0.8,
+    "category": "Top",
+    "description": "A collared, button-front blouse with a plain finish."
+  },
+  "Straight skirt": {
+    "weight": 1,
+    "metreage": 1.35,
+    "metreageWeight": 1,
+    "lining": 1.0125,
+    "liningWeight": 0.8,
+    "category": "Skirt",
+    "description": "A straight-cut skirt with no flare, falling close to the body."
+  },
+  "A-line skirt": {
+    "weight": 1,
+    "metreage": 1.7,
+    "metreageWeight": 2,
+    "lining": 1.275,
+    "liningWeight": 0.8,
+    "category": "Skirt",
+    "description": "Fitted at the waist, flaring gently toward the hem."
+  },
+  "Simple mini skirt": {
+    "weight": 1,
+    "metreage": 1,
+    "metreageWeight": 1,
+    "lining": 0.75,
+    "liningWeight": 0.5,
+    "category": "Skirt",
+    "description": "A short, plain skirt with no embellishment."
+  },
+  "Basic shorts": {
+    "weight": 1,
+    "metreage": 1,
+    "metreageWeight": 1,
+    "lining": 0.75,
+    "liningWeight": 0.5,
+    "category": "Pants",
+    "description": "Simple shorts with no embellishment."
+  },
+  "Straight pants": {
+    "weight": 1,
+    "metreage": 2.25,
+    "metreageWeight": 2,
+    "lining": 1.6875,
+    "liningWeight": 0.8,
+    "category": "Pants",
+    "description": "Straight-leg trousers with no taper or flare."
+  },
+  "Palazzo pants (plain)": {
+    "weight": 1,
+    "metreage": 2.45,
+    "metreageWeight": 2,
+    "lining": 1.8375,
+    "liningWeight": 1,
+    "category": "Pants",
+    "description": "Wide, flowing trouser legs in plain fabric."
+  },
+  "Skater skirt": {
+    "weight": 1,
+    "metreage": 2,
+    "metreageWeight": 2,
+    "lining": 1.5,
+    "liningWeight": 0.8,
+    "category": "Skirt",
+    "description": "Short, fitted at the waist, with a flared, flowy hem."
+  },
+  "Basic top + straight skirt": {
+    "weight": 1,
+    "metreage": 2.25,
+    "metreageWeight": 2,
+    "lining": 1.6875,
+    "liningWeight": 0.8,
+    "category": "Coord",
+    "description": "A plain top paired with a straight-cut skirt, worn together as one outfit."
+  },
+  "Slip top + mini skirt": {
+    "weight": 1,
+    "metreage": 1.55,
+    "metreageWeight": 2,
+    "lining": 1.1625,
+    "liningWeight": 0.8,
+    "category": "Coord",
+    "description": "A thin-strap slip top paired with a short mini skirt."
+  },
+  "Kaftan (simple)": {
+    "weight": 1,
+    "metreage": 2.8,
+    "metreageWeight": 3,
+    "lining": 2.1,
+    "liningWeight": 1,
+    "category": "Dress",
+    "description": "A loose, flowing, wide silhouette with minimal shaping."
+  },
+  "Poncho": {
+    "weight": 1,
+    "metreage": 2.25,
+    "metreageWeight": 2,
+    "lining": 1.6875,
+    "liningWeight": 0.8,
+    "category": "Outerwear",
+    "description": "A sleeveless cape-like layer that drapes over the shoulders."
+  },
+  "Simple cape": {
+    "weight": 1,
+    "metreage": 2.45,
+    "metreageWeight": 2,
+    "lining": 1.8375,
+    "liningWeight": 1,
+    "category": "Outerwear",
+    "description": "A sleeveless outer layer draping down from the shoulders."
+  },
+  "Soft shrug": {
+    "weight": 1,
+    "metreage": 1.7,
+    "metreageWeight": 2,
+    "lining": 1.275,
+    "liningWeight": 0.8,
+    "category": "Outerwear",
+    "description": "A short, loose cropped cover-up worn over the shoulders."
+  },
+  "Ruched mini dress (one direction)": {
+    "weight": 1,
+    "metreage": 2.25,
+    "metreageWeight": 2,
+    "lining": 1.6875,
+    "liningWeight": 0.8,
+    "category": "Dress",
+    "description": "Gathered ruching fabric pulled in a single direction only."
+  },
+  "Basic draped dress (single fold)": {
+    "weight": 1,
+    "metreage": 2.45,
+    "metreageWeight": 2,
+    "lining": 1.8375,
+    "liningWeight": 1,
+    "category": "Dress",
+    "description": "One soft fold of draped fabric as the main design detail."
+  },
+  "Fitted satin dress": {
+    "weight": 1,
+    "metreage": 2.25,
+    "metreageWeight": 2,
+    "lining": 1.6875,
+    "liningWeight": 0.8,
+    "category": "Dress",
+    "description": "A body-fitted silhouette in smooth, glossy satin fabric."
+  },
+  "Sweetheart neckline dress": {
+    "weight": 1,
+    "metreage": 2,
+    "metreageWeight": 2,
+    "lining": 1.5,
+    "liningWeight": 0.8,
+    "category": "Dress",
+    "description": "A curved, heart-shaped neckline across the chest."
+  },
+  "Bodycon dress": {
+    "weight": 1,
+    "metreage": 2,
+    "metreageWeight": 2,
+    "lining": 1.5,
+    "liningWeight": 0.8,
+    "category": "Dress",
+    "description": "A tight, body-hugging fit from top to bottom."
+  },
+  "Wrap dress (with lining)": {
+    "weight": 1,
+    "metreage": 2.55,
+    "metreageWeight": 3,
+    "lining": 1.9125,
+    "liningWeight": 1,
+    "category": "Dress",
+    "description": "A wrap-style front closure that ties at the waist, with a full inner lining."
+  },
+  "One-shoulder simple dress": {
+    "weight": 1,
+    "metreage": 2,
+    "metreageWeight": 2,
+    "lining": 1.5,
+    "liningWeight": 0.8,
+    "category": "Dress",
+    "description": "An asymmetric neckline covering only one shoulder, the other bare."
+  },
+  "Basic tiered dress (2 tiers)": {
+    "weight": 1,
+    "metreage": 2.8,
+    "metreageWeight": 3,
+    "lining": 2.1,
+    "liningWeight": 1,
+    "category": "Dress",
+    "description": "Two horizontal fabric tiers stacked within the skirt."
+  },
+  "Ruched top + skirt": {
+    "weight": 1,
+    "metreage": 2.45,
+    "metreageWeight": 2,
+    "lining": 1.8375,
+    "liningWeight": 1,
+    "category": "Coord",
+    "description": "Gathered ruching detail appearing on both the top and the skirt."
+  },
+  "Velvet top + skirt co-ords": {
+    "weight": 1,
+    "metreage": 2.7,
+    "metreageWeight": 3,
+    "lining": 2.025,
+    "liningWeight": 1,
+    "category": "Coord",
+    "description": "A matching top and skirt set, both made from velvet fabric."
+  },
+  "Wrap skirts": {
+    "weight": 1,
+    "metreage": 1.8,
+    "metreageWeight": 2,
+    "lining": 1.35,
+    "liningWeight": 0.8,
+    "category": "Skirt",
+    "description": "A wrap-style closure that ties or overlaps at the waist."
+  },
+  "Asymmetric skirts (simple)": {
+    "weight": 1,
+    "metreage": 1.8,
+    "metreageWeight": 2,
+    "lining": 1.35,
+    "liningWeight": 0.8,
+    "category": "Skirt",
+    "description": "An uneven hemline, with one side longer than the other."
+  },
+  "Satin dresses with contouring": {
+    "weight": 1,
+    "metreage": 2.7,
+    "metreageWeight": 3,
+    "lining": 2.025,
+    "liningWeight": 1,
+    "category": "Dress",
+    "description": "Satin fabric with fitted seams that closely shape the body."
+  },
+  "Simple top + simple pants": {
+    "weight": 2,
+    "metreage": 2.8,
+    "metreageWeight": 3,
+    "lining": 2.1,
+    "liningWeight": 1,
+    "category": "Coord",
+    "description": "A plain matching top and trouser set worn together."
+  },
+  "Side ruching dress": {
+    "weight": 2,
+    "metreage": 2.25,
+    "metreageWeight": 2,
+    "lining": 1.6875,
+    "liningWeight": 0.8,
+    "category": "Dress",
+    "description": "Gathered ruching fabric concentrated at one hip or side only."
+  },
+  "Organza-sleeve dress": {
+    "weight": 2,
+    "metreage": 2.45,
+    "metreageWeight": 2,
+    "lining": 1.8375,
+    "liningWeight": 1,
+    "category": "Dress",
+    "description": "Sheer organza fabric used specifically for the sleeves, rest of the dress plain."
+  },
+  "Tie-back dress": {
+    "weight": 2,
+    "metreage": 2,
+    "metreageWeight": 2,
+    "lining": 1.5,
+    "liningWeight": 0.8,
+    "category": "Dress",
+    "description": "A tie or lace-up detail visible at the back."
+  },
+  "Closed slit dress": {
+    "weight": 2,
+    "metreage": 2.1,
+    "metreageWeight": 2,
+    "lining": 1.575,
+    "liningWeight": 0.8,
+    "category": "Dress",
+    "description": "A leg slit that is sewn shut rather than left open."
+  },
+  "Bias dress with lining": {
+    "weight": 2,
+    "metreage": 2.45,
+    "metreageWeight": 2,
+    "lining": 1.8375,
+    "liningWeight": 1,
+    "category": "Dress",
+    "description": "A diagonal-grain cut for soft drape, with a full inner lining."
+  },
+  "Basic draped top + skirt": {
+    "weight": 2,
+    "metreage": 2.9,
+    "metreageWeight": 3,
+    "lining": 2.175,
+    "liningWeight": 1,
+    "category": "Coord",
+    "description": "Simple soft fabric draping on the top, paired with a skirt."
+  },
+  "Basic jacket + pants": {
+    "weight": 2,
+    "metreage": 4.25,
+    "metreageWeight": 4,
+    "lining": 3.1875,
+    "liningWeight": 1.2,
+    "category": "Coord",
+    "description": "A simple, unstructured jacket paired with matching trousers."
+  },
+  "Two-panel mermaid skirt + fitted top": {
+    "weight": 2,
+    "metreage": 4.15,
+    "metreageWeight": 4,
+    "lining": 3.1125,
+    "liningWeight": 1.2,
+    "category": "Coord",
+    "description": "A fitted top paired with a 2-panel flared mermaid-cut skirt."
+  },
+  "Pencil skirts (lined)": {
+    "weight": 2,
+    "metreage": 1.7,
+    "metreageWeight": 2,
+    "lining": 1.275,
+    "liningWeight": 0.8,
+    "category": "Skirt",
+    "description": "A narrow, fitted straight skirt that is fully lined."
+  },
+  "Ruched skirt": {
+    "weight": 2,
+    "metreage": 2,
+    "metreageWeight": 2,
+    "lining": 1.5,
+    "liningWeight": 0.8,
+    "category": "Skirt",
+    "description": "Gathered ruching fabric detail across the skirt."
+  },
+  "Mermaid skirt (simple, 2-4 panels)": {
+    "weight": 2,
+    "metreage": 2.8,
+    "metreageWeight": 3,
+    "lining": 2.1,
+    "liningWeight": 1,
+    "category": "Skirt",
+    "description": "Fitted through the hip and thigh, flaring out below the knee, built from just a few panels."
+  },
+  "Pants with darts + front zip": {
+    "weight": 2,
+    "metreage": 2.45,
+    "metreageWeight": 2,
+    "lining": 1.8375,
+    "liningWeight": 1,
+    "category": "Pants",
+    "description": "Tailored trousers with visible waist darts and a front zip."
+  },
+  "Tailored trousers": {
+    "weight": 2,
+    "metreage": 2.6,
+    "metreageWeight": 3,
+    "lining": 1.95,
+    "liningWeight": 1,
+    "category": "Pants",
+    "description": "A structured trouser, fitted through the waist."
+  },
+  "Culottes (tailored)": {
+    "weight": 2,
+    "metreage": 2.25,
+    "metreageWeight": 2,
+    "lining": 1.6875,
+    "liningWeight": 0.8,
+    "category": "Pants",
+    "description": "A wide-leg, shorts-like tailored trouser."
+  },
+  "Simple jumpsuit": {
+    "weight": 2,
+    "metreage": 2.8,
+    "metreageWeight": 3,
+    "lining": 2.1,
+    "liningWeight": 1,
+    "category": "Jumpsuit",
+    "description": "A plain, unstructured one-piece combining top and trouser."
+  },
+  "Multi-tier dresses (3+ tiers)": {
+    "weight": 2,
+    "metreage": 3.65,
+    "metreageWeight": 4,
+    "lining": 2.7375,
+    "liningWeight": 1,
+    "category": "Dress",
+    "description": "Three or more horizontal fabric tiers stacked within the skirt."
+  },
+  "Panelled A-line gowns (without train)": {
+    "weight": 2,
+    "metreage": 4.5,
+    "metreageWeight": 4,
+    "lining": 3.375,
+    "liningWeight": 1.2,
+    "category": "Gown",
+    "description": "Multiple vertical fabric panels with an A-line flare, no train."
+  },
+  "Corset tops with boning-lite": {
+    "weight": 2,
+    "metreage": 1.35,
+    "metreageWeight": 1,
+    "lining": 1.0125,
+    "liningWeight": 0.8,
+    "category": "Top",
+    "description": "A fitted bodice with light internal boning for structure."
+  },
+  "Sculpted bodice tops": {
+    "weight": 2,
+    "metreage": 1.45,
+    "metreageWeight": 1,
+    "lining": 1.0875,
+    "liningWeight": 0.8,
+    "category": "Top",
+    "description": "A shaped, structured bodice for a defined silhouette."
+  },
+  "Tops with built-in cups": {
+    "weight": 2,
+    "metreage": 1.35,
+    "metreageWeight": 1,
+    "lining": 1.0125,
+    "liningWeight": 0.8,
+    "category": "Top",
+    "description": "Built-in bust support cups sewn directly into the top."
+  },
+  "Ruched corset hybrid tops": {
+    "weight": 2,
+    "metreage": 1.55,
+    "metreageWeight": 2,
+    "lining": 1.1625,
+    "liningWeight": 0.8,
+    "category": "Top",
+    "description": "Corset-style structure combined with gathered ruching fabric."
+  },
+  "Mermaid skirts with godets (6-12 panels)": {
+    "weight": 2,
+    "metreage": 3.9,
+    "metreageWeight": 4,
+    "lining": 2.925,
+    "liningWeight": 1.2,
+    "category": "Skirt",
+    "description": "Fitted through the hip, with flared godet panels inserted near the hem, built from 6 to 12 panels."
+  },
+  "Ruffled skirts": {
+    "weight": 2,
+    "metreage": 3.9,
+    "metreageWeight": 4,
+    "lining": 2.925,
+    "liningWeight": 1.2,
+    "category": "Skirt",
+    "description": "Layered ruffle trim or fabric covering the skirt."
+  },
+  "Layered asymmetric skirts": {
+    "weight": 2,
+    "metreage": 3.15,
+    "metreageWeight": 3,
+    "lining": 2.3625,
+    "liningWeight": 1,
+    "category": "Skirt",
+    "description": "Multiple fabric layers of uneven length."
+  },
+  "Organza multi-layer skirts": {
+    "weight": 2,
+    "metreage": 4.5,
+    "metreageWeight": 4,
+    "lining": 3.375,
+    "liningWeight": 1.2,
+    "category": "Skirt",
+    "description": "Several stacked layers of sheer organza fabric."
+  },
+  "Dramatic side drape skirts": {
+    "weight": 2,
+    "metreage": 2.8,
+    "metreageWeight": 3,
+    "lining": 2.1,
+    "liningWeight": 1,
+    "category": "Skirt",
+    "description": "An exaggerated fabric drape gathered dramatically to one side."
+  },
+  "Corset + skirt co-ords": {
+    "weight": 2,
+    "metreage": 3.35,
+    "metreageWeight": 3,
+    "lining": 2.5125,
+    "liningWeight": 1,
+    "category": "Coord",
+    "description": "A structured corset top matched with a separate skirt."
+  },
+  "Multi-layer organza sets": {
+    "weight": 2,
+    "metreage": 3.95,
+    "metreageWeight": 4,
+    "lining": 2.9625,
+    "liningWeight": 1.2,
+    "category": "Coord",
+    "description": "A multi-piece set built from several layered organza pieces."
+  },
+  "Full corsets with boning channels": {
+    "weight": 2,
+    "metreage": 2,
+    "metreageWeight": 2,
+    "lining": 1.5,
+    "liningWeight": 0.8,
+    "category": "Top",
+    "description": "A fully structured corset with visible vertical boning channel lines."
+  },
+  "Sculptural asymmetric tops": {
+    "weight": 2,
+    "metreage": 1.8,
+    "metreageWeight": 2,
+    "lining": 1.35,
+    "liningWeight": 0.8,
+    "category": "Top",
+    "description": "Non-symmetrical, architectural shaping across the top."
+  },
+  "Couture skirts (organza, tulle multi-layer)": {
+    "weight": 2,
+    "metreage": 5.05,
+    "metreageWeight": 5,
+    "lining": 3.7875,
+    "liningWeight": 1.2,
+    "category": "Skirt",
+    "description": "A high-volume skirt built from many layers of organza or tulle."
+  },
+  "Simple blazer co-ord": {
+    "weight": 3,
+    "metreage": 3.35,
+    "metreageWeight": 3,
+    "lining": 2.5125,
+    "liningWeight": 1,
+    "category": "Jacket",
+    "description": "A basic matching blazer and bottom set."
+  },
+  "One-layer draped sari gown": {
+    "weight": 3,
+    "metreage": 5.05,
+    "metreageWeight": 5,
+    "lining": 3.7875,
+    "liningWeight": 1.2,
+    "category": "Gown",
+    "description": "A sari-inspired gown with a single draped fabric layer."
+  },
+  "Basic blazer (no shoulder padding)": {
+    "weight": 3,
+    "metreage": 2.45,
+    "metreageWeight": 2,
+    "lining": 1.8375,
+    "liningWeight": 1,
+    "category": "Jacket",
+    "description": "A plain tailored blazer with unstructured, unpadded shoulders."
+  },
+  "Multi-direction ruched dresses": {
+    "weight": 3,
+    "metreage": 3.35,
+    "metreageWeight": 3,
+    "lining": 2.5125,
+    "liningWeight": 1,
+    "category": "Dress",
+    "description": "Ruching fabric gathered in more than one direction across the dress."
+  },
+  "Draped cocktail dresses": {
+    "weight": 3,
+    "metreage": 3.35,
+    "metreageWeight": 3,
+    "lining": 2.5125,
+    "liningWeight": 1,
+    "category": "Dress",
+    "description": "Soft fabric draping on a short-to-mid-length cocktail dress."
+  },
+  "6-10 panel dresses": {
+    "weight": 3,
+    "metreage": 3.9,
+    "metreageWeight": 4,
+    "lining": 2.925,
+    "liningWeight": 1.2,
+    "category": "Dress",
+    "description": "Constructed from 6 to 10 fitted vertical fabric panels."
+  },
+  "Mermaid dresses (with structure)": {
+    "weight": 3,
+    "metreage": 4.5,
+    "metreageWeight": 4,
+    "lining": 3.375,
+    "liningWeight": 1.2,
+    "category": "Dress",
+    "description": "Fitted through the body with a structured flare from the knee down."
+  },
+  "Deep neck sculpted dresses": {
+    "weight": 3,
+    "metreage": 3.35,
+    "metreageWeight": 3,
+    "lining": 2.5125,
+    "liningWeight": 1,
+    "category": "Dress",
+    "description": "A low, deep neckline paired with a shaped, structured bodice."
+  },
+  "Double-layered or sculpted sleeves dress": {
+    "weight": 3,
+    "metreage": 3.15,
+    "metreageWeight": 3,
+    "lining": 2.3625,
+    "liningWeight": 1,
+    "category": "Dress",
+    "description": "A distinctive layered or sculptural sleeve as the standout feature."
+  },
+  "Ruffled dresses (heavy ruffle work)": {
+    "weight": 3,
+    "metreage": 4.5,
+    "metreageWeight": 4,
+    "lining": 3.375,
+    "liningWeight": 1.2,
+    "category": "Dress",
+    "description": "Extensive ruffle trim covering large parts of the dress."
+  },
+  "Multi-drape tops": {
+    "weight": 3,
+    "metreage": 1.7,
+    "metreageWeight": 2,
+    "lining": 1.275,
+    "liningWeight": 0.8,
+    "category": "Top",
+    "description": "Several draped fabric folds arranged across the top."
+  },
+  "Tops with channels + contour stitching": {
+    "weight": 3,
+    "metreage": 1.45,
+    "metreageWeight": 1,
+    "lining": 1.0875,
+    "liningWeight": 0.8,
+    "category": "Top",
+    "description": "Visible stitched channels that shape and contour the body."
+  },
+  "Dramatic sleeve tops (bishop, lantern, balloon sculpted)": {
+    "weight": 3,
+    "metreage": 2,
+    "metreageWeight": 2,
+    "lining": 1.5,
+    "liningWeight": 0.8,
+    "category": "Top",
+    "description": "A large, voluminous, sculpted sleeve (bishop, lantern, or balloon shape) as the standout feature."
+  },
+  "Asymmetric sculpted neckline tops": {
+    "weight": 3,
+    "metreage": 1.55,
+    "metreageWeight": 2,
+    "lining": 1.1625,
+    "liningWeight": 0.8,
+    "category": "Top",
+    "description": "A non-symmetrical, shaped and structured neckline."
+  },
+  "Sculpted drape skirts": {
+    "weight": 3,
+    "metreage": 2.8,
+    "metreageWeight": 3,
+    "lining": 2.1,
+    "liningWeight": 1,
+    "category": "Skirt",
+    "description": "Structured, shaped fabric draping across the skirt."
+  },
+  "Panelled tops + detailed skirts": {
+    "weight": 3,
+    "metreage": 3.55,
+    "metreageWeight": 4,
+    "lining": 2.6625,
+    "liningWeight": 1,
+    "category": "Coord",
+    "description": "A multi-panel top paired with a detailed, embellished skirt."
+  },
+  "Draped top + flared skirt": {
+    "weight": 3,
+    "metreage": 3.55,
+    "metreageWeight": 4,
+    "lining": 2.6625,
+    "liningWeight": 1,
+    "category": "Coord",
+    "description": "A soft draped top paired with a flared skirt."
+  },
+  "Statement co-ord sets (like ruffle / coated velvet)": {
+    "weight": 3,
+    "metreage": 3.35,
+    "metreageWeight": 3,
+    "lining": 2.5125,
+    "liningWeight": 1,
+    "category": "Coord",
+    "description": "A multi-piece set built around a bold statement fabric or finish, such as heavy ruffles or coated velvet."
+  },
+  "Detailed jumpsuits": {
+    "weight": 3,
+    "metreage": 3.35,
+    "metreageWeight": 3,
+    "lining": 2.5125,
+    "liningWeight": 1,
+    "category": "Jumpsuit",
+    "description": "A one-piece garment with added embellishment or structural detail."
+  },
+  "Draped jackets": {
+    "weight": 3,
+    "metreage": 2.8,
+    "metreageWeight": 3,
+    "lining": 2.1,
+    "liningWeight": 1,
+    "category": "Jacket",
+    "description": "Soft draped fabric styling on the jacket, rather than a stiff tailored structure."
+  },
+  "Structured peplum jacket": {
+    "weight": 3,
+    "metreage": 2.25,
+    "metreageWeight": 2,
+    "lining": 1.6875,
+    "liningWeight": 0.8,
+    "category": "Jacket",
+    "description": "A structured, flared peplum detail at the waist of the jacket."
+  },
+  "Detailed blazer (light padding)": {
+    "weight": 3,
+    "metreage": 2.9,
+    "metreageWeight": 3,
+    "lining": 2.175,
+    "liningWeight": 1,
+    "category": "Jacket",
+    "description": "A blazer with light shoulder padding and added surface detailing."
+  },
+  "Evening gowns with 2-3 layer skirts": {
+    "weight": 3,
+    "metreage": 7.85,
+    "metreageWeight": 5,
+    "lining": 5.8875,
+    "liningWeight": 1.5,
+    "category": "Gown",
+    "description": "A formal gown with 2 to 3 stacked skirt layers."
+  },
+  "High-risk gowns (deep plunge + slit + backless + cups)": {
+    "weight": 3,
+    "metreage": 7.3,
+    "metreageWeight": 5,
+    "lining": 5.475,
+    "liningWeight": 1.5,
+    "category": "Gown",
+    "description": "A deep plunging neckline, a leg slit, an open back, and built-in bust cups."
+  },
+  "Lace & organza couture gowns": {
+    "weight": 3,
+    "metreage": 7.85,
+    "metreageWeight": 5,
+    "lining": 5.8875,
+    "liningWeight": 1.5,
+    "category": "Gown",
+    "description": "A combination of lace detailing and layered organza fabric."
+  },
+  "Tops requiring hand-finished edges & stiffeners": {
+    "weight": 3,
+    "metreage": 2.25,
+    "metreageWeight": 2,
+    "lining": 1.6875,
+    "liningWeight": 0.8,
+    "category": "Top",
+    "description": "Hand-finished raw edges with internal fabric stiffening."
+  },
+  "Gowns with detachable trains": {
+    "weight": 3,
+    "metreage": 8.95,
+    "metreageWeight": 6,
+    "lining": 6.7125,
+    "liningWeight": 1.8,
+    "category": "Gown",
+    "description": "A formal gown with a train that can be removed or attached."
+  },
+  "Multi-panel extreme mermaid skirts (12-20 panels)": {
+    "weight": 3,
+    "metreage": 5.6,
+    "metreageWeight": 5,
+    "lining": 4.2,
+    "liningWeight": 1.5,
+    "category": "Skirt",
+    "description": "A heavily fitted mermaid-cut skirt built from 12 to 20 panels."
+  },
+  "Couture co-ords with structured bodice": {
+    "weight": 3,
+    "metreage": 4.5,
+    "metreageWeight": 4,
+    "lining": 3.375,
+    "liningWeight": 1.2,
+    "category": "Coord",
+    "description": "A multi-piece set featuring a structured, shaped bodice piece."
+  },
+  "Organza/Net fully layered couture co-ords": {
+    "weight": 3,
+    "metreage": 4.6,
+    "metreageWeight": 4,
+    "lining": 3.45,
+    "liningWeight": 1.2,
+    "category": "Coord",
+    "description": "A multi-piece set built entirely from layered organza or net fabric."
+  },
+  "Couture jumpsuits": {
+    "weight": 3,
+    "metreage": 4.5,
+    "metreageWeight": 4,
+    "lining": 3.375,
+    "liningWeight": 1.2,
+    "category": "Jumpsuit",
+    "description": "A one-piece garment with elevated, couture-level detailing."
+  },
+  "Sculptural jackets": {
+    "weight": 3,
+    "metreage": 3.95,
+    "metreageWeight": 4,
+    "lining": 2.9625,
+    "liningWeight": 1.2,
+    "category": "Jacket",
+    "description": "An architectural, non-traditional structured shape for the jacket."
+  },
+  "Blazers with shoulder construction + padding": {
+    "weight": 3,
+    "metreage": 3.95,
+    "metreageWeight": 4,
+    "lining": 2.9625,
+    "liningWeight": 1.2,
+    "category": "Jacket",
+    "description": "A structured blazer with visibly built-up, padded shoulders."
+  },
+  "Anything requiring hand beading or hand draping": {
+    "weight": 3,
+    "metreage": 6.7,
+    "metreageWeight": 5,
+    "lining": 5.025,
+    "liningWeight": 1.5,
+    "category": "Manual Review",
+    "description": "Not a distinct visual garment type - a craftsmanship-based pricing tier. Route to manual staff review instead of AI photo detection."
+  },
+  "Anything mimicking celebrity couture": {
+    "weight": 3,
+    "metreage": 8.95,
+    "metreageWeight": 6,
+    "lining": 6.7125,
+    "liningWeight": 1.8,
+    "category": "Manual Review",
+    "description": "Not a distinct visual garment type - a reference-based custom pricing tier. Route to manual staff review instead of AI photo detection."
+  },
+  "Detailed sari-gowns (multi drape)": {
+    "weight": 4,
+    "metreage": 7.3,
+    "metreageWeight": 5,
+    "lining": 5.475,
+    "liningWeight": 1.5,
+    "category": "Gown",
+    "description": "A sari-inspired gown draped in multiple directions."
+  },
+  "Full gowns (12-25+ panels)": {
+    "weight": 4,
+    "metreage": 9.5,
+    "metreageWeight": 6,
+    "lining": 7.125,
+    "liningWeight": 1.8,
+    "category": "Gown",
+    "description": "A very high-volume gown constructed from 12 to 25 or more panels."
+  },
+  "Mermaid gowns with train": {
+    "weight": 4,
+    "metreage": 7.85,
+    "metreageWeight": 5,
+    "lining": 5.8875,
+    "liningWeight": 1.5,
+    "category": "Gown",
+    "description": "A fitted mermaid silhouette with an attached train."
+  },
+  "Panelled gowns with structured bodice": {
+    "weight": 4,
+    "metreage": 7.3,
+    "metreageWeight": 5,
+    "lining": 5.475,
+    "liningWeight": 1.5,
+    "category": "Gown",
+    "description": "A multi-panel gown with a shaped, structured bodice."
+  },
+  "Heavily draped gowns": {
+    "weight": 4,
+    "metreage": 6.7,
+    "metreageWeight": 5,
+    "lining": 5.025,
+    "liningWeight": 1.5,
+    "category": "Gown",
+    "description": "Extensive soft fabric draping covering most of the gown."
+  },
+  "Sculptural gowns (architectural shapes)": {
+    "weight": 4,
+    "metreage": 10.05,
+    "metreageWeight": 6,
+    "lining": 7.5375,
+    "liningWeight": 1.8,
+    "category": "Gown",
+    "description": "A bold, non-traditional architectural silhouette."
+  },
+  "Ball gowns": {
+    "weight": 4,
+    "metreage": 11.2,
+    "metreageWeight": 6,
+    "lining": 8.4,
+    "liningWeight": 1.8,
+    "category": "Gown",
+    "description": "A full, voluminous skirt with a fitted bodice, in the classic ball gown style."
+  },
+  "Couture corset tops (multiple layers)": {
+    "weight": 4,
+    "metreage": 2.25,
+    "metreageWeight": 2,
+    "lining": 1.6875,
+    "liningWeight": 0.8,
+    "category": "Top",
+    "description": "A corset top built from multiple structured fabric layers."
+  },
+  "Tops with heavy draping + structure": {
+    "weight": 4,
+    "metreage": 2.45,
+    "metreageWeight": 2,
+    "lining": 1.8375,
+    "liningWeight": 1,
+    "category": "Top",
+    "description": "Heavy fabric draping combined with strong structural shaping."
+  },
+  "Heavily embellished skirts requiring pattern matching": {
+    "weight": 4,
+    "metreage": 5.6,
+    "metreageWeight": 5,
+    "lining": 4.2,
+    "liningWeight": 1.5,
+    "category": "Skirt",
+    "description": "Dense embellishment across the skirt requiring careful pattern or motif alignment."
+  },
+  "Draped couture top + elaborate skirt": {
+    "weight": 4,
+    "metreage": 6.7,
+    "metreageWeight": 5,
+    "lining": 5.025,
+    "liningWeight": 1.5,
+    "category": "Coord",
+    "description": "A draped couture-level top paired with an elaborate, detailed skirt."
+  },
+  "Multi-layer bridal-level sets": {
+    "weight": 4,
+    "metreage": 13.45,
+    "metreageWeight": 6,
+    "lining": 10.0875,
+    "liningWeight": 1.8,
+    "category": "Coord",
+    "description": "A bridal-level multi-piece set built from several fabric layers."
+  },
+  "Fully draped sari gowns (3+ direction drape)": {
+    "weight": 4,
+    "metreage": 8.95,
+    "metreageWeight": 6,
+    "lining": 6.7125,
+    "liningWeight": 1.8,
+    "category": "Gown",
+    "description": "A sari-style gown draped in three or more directions."
+  }
+}

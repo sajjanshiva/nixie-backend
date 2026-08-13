@@ -1,0 +1,18 @@
+{
+  "_comment": "Fabric -> Weight, from the Fabric tab. _placeholder entries were blank in the original sheet.",
+
+  "Brasso": 2, "Canvas": 2, "Cotton": 2, "Nylon": 2, "Chinnon": 2, "Crepe": 2, "Georgette": 2,
+  "Net": 2, "Polyester": 2, "Tissue": 2, "Muslin": 2, "Chiffon": 2,
+
+  "Viscose": 4, "Banana Crepe": 4, "Double Georgette": 4, "Jute": 4, "Satin": 4, "Brocade": 4,
+  "Shimmer": 4, "Jersey": 4,
+
+  "Lycra": 6, "Organza": 6, "Silk": 6, "Velvet": 6, "Leather": 6, "Wool": 6, "Suede": 6,
+
+  "Emb - Cotton": 10, "Emb - Georgette": 10, "Emb - Net": 10, "Emb - Organza": 10,
+  "Emb - Satin": 10, "Emb - Silk": 10, "Emb - Velvet": 10,
+
+  "(heavy) Emb - Cotton": 12, "(heavy) Emb - Georgette": 12, "(heavy) Emb - Net": 12,
+  "(heavy) Emb - Organza": 12, "(heavy) Emb - Satin": 12, "(heavy) Emb - Silk": 12,
+  "(heavy) Emb - Velvet": 12
+}
