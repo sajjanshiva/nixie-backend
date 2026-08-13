@@ -1,7 +1,3 @@
-Yes — **include that Features section**. It's useful and concise. I'd keep the README exactly like the shorter version, with that section included.
-
-The top should be:
-
 ````markdown
 # Nixie AI Outfit Analysis & Lead Capture
 
