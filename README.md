@@ -255,9 +255,3 @@ PORT
 VITE_API_BASE_URL
 ```
 
-**Never commit `.env` files or API credentials to GitHub.**
-
-```
-
-This is the version I'd actually put in the repository. It has the **important project information without turning the README into technical documentation**.
-```
