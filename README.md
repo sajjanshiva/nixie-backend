@@ -1,70 +1,267 @@
-# Nixie AI Outfit Analysis & Lead Capture - v3
+Yes — **include that Features section**. It's useful and concise. I'd keep the README exactly like the shorter version, with that section included.
 
-## What changed from v2
+The top should be:
 
-- **Removed the category-detection step entirely.** v2 did 2 AI calls (category
-  first, then outfit+fabric narrowed to that category). v3 does ONE AI call
-  against the full outfit list. Deliberate trade-off (simpler UX, faster,
-  one less screen) confirmed with the tech lead - this reintroduces some of
-  the outfit-confusion risk the two-stage design was meant to reduce, so the
-  Description column on each outfit matters more now, not less.
-- **UI polish across every screen**: animated spinner with rotating status
-  text during the AI call, a 3-dot step indicator (Photo / Details /
-  Contact), color-coded confidence badges (green/yellow/red), smooth
-  fade-in transitions, better focus states on inputs, and a redesigned
-  Thank You screen with an animated checkmark and a "what happens next" list.
-- **Hardened lead submission**: `category` is no longer a hard-required
-  field for Draft Order creation - it's looked up automatically from the
-  detected outfit's sheet row for staff reference only, and now defaults to
-  "Unknown" instead of blocking submission if that cell happens to be blank
-  in the sheet. Outfit/fabric/price remain required, since those come
-  directly from AI detection and are never missing in practice.
+````markdown
+# Nixie AI Outfit Analysis & Lead Capture
 
-## Flow
+AI-powered outfit analysis widget for the Nixie Shopify storefront.
 
+Customers upload an outfit image, AI detects the outfit and fabrics, an estimated price is calculated, and the customer can submit their contact details. The information is saved to a Shopify Draft Order as a **lead record** for staff follow-up.
+
+## ✨ Features
+
+- 📷 Upload an outfit reference image
+- 🤖 AI-based outfit and fabric detection
+- 👗 Detects **1 primary fabric + up to 2 secondary fabrics**
+- 🎯 AI confidence scores for outfit and fabrics
+- 🔄 Customer can override detected outfit/fabrics
+- 💰 Automatic price calculation
+- ⚡ Price recalculates immediately when selections are changed
+- 📊 Live pricing/outfit/fabric data from Google Sheets
+- 🖼️ Reference image stored using ImageKit
+- 📝 Customer lead capture
+- 🛍️ Lead saved as a Shopify Draft Order
+- 💾 Session persistence using browser `sessionStorage`
+- 🚫 No login, payment, checkout, or Shopify customer account required
+
+## Architecture
+
+```text
+Shopify Storefront
+       ↓
+React Widget
+       ↓
+Node.js / Express Backend
+       ↓
+ ┌──────────────┬──────────────┬──────────────┐
+ ↓              ↓              ↓
+Gemini       Google Sheets   ImageKit
+AI           Pricing Data    Image Storage
+       ↓
+Shopify Admin API
+       ↓
+Draft Order / Lead
+````
+
+## AI Detection
+
+The AI uses a single analysis call to detect:
+
+* Outfit type
+* Primary fabric
+* 0–2 secondary fabrics
+
+All outfits from the Google Sheet are provided to the AI. Each outfit can have a short `Description` to help distinguish visually similar outfits.
+
+There is no separate category-detection step.
+
+## Pricing
+
+Multiple fabrics are handled using a primary-dominant pricing model:
+
+```text
+combinedFabricWeight =
+    primaryFabricWeight
+    + 0.35 × secondaryFabricWeights
 ```
-Step 1: Upload photo -> single AI call (outfit + primary/secondary fabric(s), all 124 outfits)
-Step 2: Result screen - outfit, primary fabric, secondary fabric(s), price, confidence badges
-        -> "Analyze Another" | "Contact Us" | Instagram link
-Step 3: "Get in Touch" form: Name, Phone, Email, Address, City, State, Pincode
-        -> Back (to Step 2)
-Step 4: Submit -> Draft Order created (all data as custom line item properties)
-Step 5: "Thanks, we'll be in touch!"
+
+Then:
+
+```text
+score =
+    combinedFabricWeight
+    + outfitWeight
+    + metreageWeight
+    + liningWeight
 ```
 
-No login, no category step, no measurements, no checkout/payment.
+The score is matched against the configured Price Brackets from Google Sheets.
+
+The final price is calculated as:
+
+```text
+price =
+    bracket.min
+    + 80% × (bracket.max - bracket.min)
+```
+
+The `0.35` secondary-fabric factor is defined as:
+
+```text
+SECONDARY_FABRIC_DAMPING
+```
+
+in `backend/src/services/pricing.js`.
+
+If the customer changes the outfit or fabric, the price is recalculated automatically.
+
+## Google Sheets
+
+The backend reads three tabs:
+
+### Fabric
+
+```text
+Fabric
+Weight
+```
+
+### Outfit
+
+```text
+Outfit
+Weight
+Metreage
+Metreage Weight
+Lining
+Lining Weight
+Description
+```
+
+### Price Brackets
+
+```text
+Price Brackets
+Score Min
+Score Max
+```
+
+Sheet data is loaded on startup and automatically refreshed every 15 minutes by default.
+
+## Shopify Draft Order
+
+The Draft Order is used only as a **lead record**, not as a real purchase.
+
+The following information is stored as custom line-item properties:
+
+```text
+Outfit Type
+Primary Fabric
+Secondary Fabric 1
+Secondary Fabric 2
+Main Outfit Image
+Name
+Phone
+Email
+Address
+City
+State
+Pincode
+```
+
+## Project Structure
+
+```text
+nixie-outfit-project/
+├── backend/
+│   ├── src/
+│   │   ├── config/
+│   │   ├── middleware/
+│   │   ├── routes/
+│   │   └── services/
+│   ├── test-sheets.js
+│   └── package.json
+│
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── api/
+│   │   └── ...
+│   └── package.json
+│
+├── .gitignore
+└── README.md
+```
 
 ## Setup
 
-Same as before - `npm install` in both `backend/` and `frontend/`, copy
-`.env.example` to `.env`, fill in real credentials, run `test-sheets.js`
-before starting the backend.
+### Backend
 
-## Google Sheet requirements (unchanged from v2)
-
-The **Outfit** tab needs `Category` and `Description` columns filled in.
-`Category` is used only for lead record labeling now (not for narrowing the
-AI's outfit list, since that step was removed) - a blank cell here no longer
-breaks anything, but `Description` still directly affects AI accuracy since
-it's the only thing helping Gemini distinguish 124 outfits in one prompt.
-
-Outfits tagged `Manual Review` are automatically excluded from what the AI
-can detect (`pricing.getAllOutfits()` filters them out) - if the sheet no
-longer has any such rows, this is a harmless no-op.
-
-## Multi-fabric pricing (unchanged from v2)
-
-```
-combinedFabricWeight = primaryFabricWeight + 0.35 * sum(secondaryFabricWeights)
-score = combinedFabricWeight + outfit.weight + outfit.metreageWeight + outfit.liningWeight
-finalPrice = bracket.priceMin + 80% * (bracket.priceMax - bracket.priceMin)
+```bash
+cd backend
+npm install
 ```
 
-The `0.35` lives as `SECONDARY_FABRIC_DAMPING` in `backend/src/services/pricing.js`.
 
-## Known issue carried over from v2 - still needs a decision
+Start the backend:
 
-With 2 max-weight secondary fabrics, 30 of 124 outfits can score above the
-Price Brackets table's current ceiling (27.8). The code fails loudly rather
-than guessing a price. Needs the Price Brackets top bracket extended, with a
-confirmed new ceiling score/price from whoever owns pricing strategy.
+```bash
+npm run dev
+```
+
+### Frontend
+
+```bash
+cd frontend
+npm install
+```
+
+Create `.env` from `.env.example`:
+
+```text
+VITE_API_BASE_URL=<backend-url>
+```
+
+Start development:
+
+```bash
+npm run dev
+```
+
+## Shopify Build
+
+Build the frontend for Shopify:
+
+```bash
+cd frontend
+npm run build
+```
+
+This generates the static files in:
+
+```text
+frontend/dist/
+```
+
+The generated widget assets are uploaded to the Shopify theme's **Assets** folder, and `nixie-widget.liquid` is added as a Shopify theme section.
+
+> `VITE_API_BASE_URL` is embedded during the build, so changing the backend URL requires rebuilding the frontend.
+
+## Environment Variables
+
+### Backend
+
+```text
+SHOPIFY_STORE_DOMAIN
+SHOPIFY_CLIENT_ID
+SHOPIFY_CLIENT_SECRET
+SHOPIFY_API_VERSION
+
+IMAGEKIT_PUBLIC_KEY
+IMAGEKIT_PRIVATE_KEY
+IMAGEKIT_URL_ENDPOINT
+
+GEMINI_API_KEY
+GEMINI_MODEL
+
+GOOGLE_SHEET_ID
+GOOGLE_SERVICE_ACCOUNT_EMAIL
+GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY
+
+PRICING_REFRESH_INTERVAL_MINUTES
+PORT
+```
+
+### Frontend
+
+```text
+VITE_API_BASE_URL
+```
+
+**Never commit `.env` files or API credentials to GitHub.**
+
+```
+
+This is the version I'd actually put in the repository. It has the **important project information without turning the README into technical documentation**.
+```
