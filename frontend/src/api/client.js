@@ -8,6 +8,26 @@ async function handleResponse(res) {
   return data;
 }
 
+const REQUIRED_ANALYZE_FIELDS = [
+  "outfitType",
+  "primaryFabric",
+  "secondaryFabrics",
+  "price",
+  "allOutfits",
+  "validFabricTypes",
+];
+
+function assertAnalyzeShape(data) {
+  const missing = REQUIRED_ANALYZE_FIELDS.filter((key) => data?.[key] == null);
+  if (missing.length > 0) {
+    throw new Error(
+      `The server returned an unexpected response (missing: ${missing.join(", ")}). ` +
+        "The API is likely running an older version than this widget."
+    );
+  }
+  return data;
+}
+
 export async function analyzeOutfit(file) {
   const formData = new FormData();
   formData.append("image", file);
@@ -15,7 +35,7 @@ export async function analyzeOutfit(file) {
     method: "POST",
     body: formData,
   });
-  return handleResponse(res);
+  return assertAnalyzeShape(await handleResponse(res));
 }
 
 export async function recalculatePrice(outfitType, fabrics) {

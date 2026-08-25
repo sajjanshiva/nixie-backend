@@ -57,7 +57,10 @@ export default function ResultStep({ data, onUpdate, onContactUs, onAnalyzeAnoth
     return {
       outfitType,
       primaryFabric,
-      secondaryFabrics: secondaryFabrics.map((name) => ({ name })),
+      secondaryFabrics: secondaryFabrics.map((name, i) => ({
+        name,
+        confidence: confidences.secondary[i],
+      })),
       price,
     };
   }

@@ -4,40 +4,7 @@ import ResultStep from "./components/ResultStep";
 import ContactForm from "./components/ContactForm";
 import ThankYou from "./components/ThankYou";
 import { analyzeOutfit } from "./api/client";
-
-const STEPS = {
-  UPLOAD: "upload",
-  RESULT: "result",
-  CONTACT: "contact",
-  THANK_YOU: "thank_you",
-};
-
-const STORAGE_KEY = "nixieOrderState";
-
-function loadFromSession() {
-  try {
-    const raw = sessionStorage.getItem(STORAGE_KEY);
-    return raw ? JSON.parse(raw) : null;
-  } catch {
-    return null;
-  }
-}
-
-function saveToSession(state) {
-  try {
-    sessionStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-  } catch {
-    // sessionStorage can fail (private browsing, quota) - non-fatal.
-  }
-}
-
-function clearSession() {
-  try {
-    sessionStorage.removeItem(STORAGE_KEY);
-  } catch {
-    /* non-fatal */
-  }
-}
+import { STEPS, loadFromSession, saveToSession, clearSession } from "./session";
 
 export default function App() {
   const [step, setStep] = useState(STEPS.UPLOAD);
@@ -45,10 +12,9 @@ export default function App() {
   const [error, setError] = useState(null);
   const [orderData, setOrderData] = useState(null);
 
-  // Rehydrate on mount - covers browser back/refresh mid-flow.
   useEffect(() => {
     const saved = loadFromSession();
-    if (saved && saved.step && saved.orderData) {
+    if (saved) {
       setStep(saved.step);
       setOrderData(saved.orderData);
     }
