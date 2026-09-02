@@ -16,4 +16,21 @@ html, body {
   min-height: 100vh;
   width: 100%;
   display: block;
+  background-color: #FFFDF0;
+}
+
+#nixie-outfit-widget .nixie-mobile {
+  display: flex !important;
+}
+#nixie-outfit-widget .nixie-desktop {
+  display: none !important;
+}
+
+@media (min-width: 768px) {
+  #nixie-outfit-widget .nixie-mobile {
+    display: none !important;
+  }
+  #nixie-outfit-widget .nixie-desktop {
+    display: flex !important;
+  }
 }

@@ -569,9 +569,6 @@ video {
 .mb-6 {
   margin-bottom: 1.5rem;
 }
-.mb-7 {
-  margin-bottom: 1.75rem;
-}
 .mb-8 {
   margin-bottom: 2rem;
 }
@@ -1154,10 +1151,6 @@ video {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
-.px-7 {
-  padding-left: 1.75rem;
-  padding-right: 1.75rem;
-}
 .px-8 {
   padding-left: 2rem;
   padding-right: 2rem;
@@ -1196,6 +1189,9 @@ video {
 }
 .pb-8 {
   padding-bottom: 2rem;
+}
+.pt-5 {
+  padding-top: 1.25rem;
 }
 .text-left {
   text-align: left;
@@ -1395,6 +1391,23 @@ html, body {
   min-height: 100vh;
   width: 100%;
   display: block;
+  background-color: #FFFDF0;
+}
+
+#nixie-outfit-widget .nixie-mobile {
+  display: flex !important;
+}
+#nixie-outfit-widget .nixie-desktop {
+  display: none !important;
+}
+
+@media (min-width: 768px) {
+  #nixie-outfit-widget .nixie-mobile {
+    display: none !important;
+  }
+  #nixie-outfit-widget .nixie-desktop {
+    display: flex !important;
+  }
 }
 
 .hover\:bg-nixieCyan\/10:hover {
@@ -1486,11 +1499,6 @@ html, body {
   .sm\:py-12 {
     padding-top: 3rem;
     padding-bottom: 3rem;
-  }
-
-  .sm\:text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
   }
 
   .sm\:text-4xl {

@@ -4,6 +4,7 @@ import modelHero from "../assets/model-hero.png";
 
 export default function UploadStep({ onImageSelected, loading, error }) {
   const inputRef = useRef(null);
+  const mobileInputRef = useRef(null);
   const [dragActive, setDragActive] = useState(false);
 
   if (loading) {
@@ -25,7 +26,7 @@ export default function UploadStep({ onImageSelected, loading, error }) {
     <div className="w-full h-screen max-h-screen overflow-hidden bg-nixieCream font-nixie flex flex-col md:flex-row">
 
       {/* ── MOBILE VIEW: Simple, natural full-image layout (Zero crop, edge-to-edge photo + clean text below) ── */}
-      <div className="flex md:hidden flex-col h-full overflow-y-auto bg-nixieCream">
+      <div className="nixie-mobile flex md:hidden flex-col h-full overflow-y-auto bg-nixieCream">
 
         {/* Full uncropped image with clean solid boundaries at top and bottom */}
         <div className="w-full flex-shrink-0 border-y-[3.5px] border-nixieCyanDark">
@@ -36,51 +37,47 @@ export default function UploadStep({ onImageSelected, loading, error }) {
           />
         </div>
 
-        {/* Text & Button cleanly below the photo on cream background with comfortable spacing */}
-        <div
-          className="w-full px-7 py-8 flex flex-col justify-center animate-slideUp"
-          onDragOver={(e) => { e.preventDefault(); setDragActive(true); }}
-          onDragLeave={() => setDragActive(false)}
-          onDrop={handleDrop}
-        >
-          <h1 className="text-2xl sm:text-3xl font-bold leading-snug text-nixieCyanDark mb-2">
-            Found a look you can&apos;t stop
-          </h1>
-          <h1 className="text-2xl sm:text-3xl font-bold italic text-nixieYellow mb-4">
-            thinking about?
-          </h1>
-          <p className="text-nixieText/75 text-sm leading-relaxed mb-7 max-w-sm">
-            Upload it here, we&apos;ll tell you what it&apos;ll cost to get the look at Nixie!
-          </p>
+        {/* Content below image */}
+        <div className="flex-1 flex flex-col justify-center px-6 pt-5 pb-8 text-center">
+          <div className="max-w-sm mx-auto">
+            <h1 className="text-3xl font-bold leading-tight text-nixieCyanDark mb-1">
+              Found a look you<br />can&apos;t stop
+            </h1>
+            <h1 className="text-3xl font-bold italic text-nixieYellow mb-4">
+              thinking about?
+            </h1>
+            <p className="text-nixieText/75 text-sm leading-relaxed mb-6">
+              Upload it here, we&apos;ll tell you what it&apos;ll cost to get the look at Nixie!
+            </p>
 
-          <input
-            ref={inputRef}
-            type="file"
-            accept="image/png,image/jpeg,image/webp"
-            className="hidden"
-            onChange={(e) => handleFile(e.target.files?.[0])}
-          />
+            <input
+              ref={mobileInputRef}
+              type="file"
+              accept="image/png,image/jpeg,image/webp"
+              className="hidden"
+              onChange={(e) => handleFile(e.target.files?.[0])}
+            />
 
-          <div>
             <button
               type="button"
-              onClick={() => inputRef.current?.click()}
-              className={`border-2 border-nixieCyanDark text-nixieCyanDark font-medium px-8 py-3 rounded-none shadow-[3px_3px_0px_#F5A623] hover:bg-nixieCyanDark hover:text-white transition-all text-sm active:translate-x-0.5 active:translate-y-0.5 ${dragActive ? "bg-nixieCyanDark text-white" : ""}`}
+              onClick={() => mobileInputRef.current?.click()}
+              className="w-full border-2 border-nixieCyanDark text-nixieCyanDark font-medium py-3.5 rounded-none shadow-[3px_3px_0px_#F5A623] hover:bg-nixieCyanDark hover:text-white transition-all text-base active:translate-x-0.5 active:translate-y-0.5"
             >
               Show us the outfit
             </button>
-          </div>
 
-          {error && (
-            <p className="text-red-600 mt-4 text-xs bg-red-50 border border-red-200 rounded px-3 py-2">
-              {error}
-            </p>
-          )}
+            {error && (
+              <p className="text-red-600 mt-4 text-xs bg-red-50 border border-red-200 rounded px-3 py-2 animate-fadeIn">
+                {error}
+              </p>
+            )}
+          </div>
         </div>
+
       </div>
 
       {/* ── DESKTOP VIEW ── */}
-      <div className="hidden md:flex w-full h-full">
+      <div className="nixie-desktop hidden md:flex w-full h-full">
 
         {/* Left: headline + button */}
         <div className="flex-1 h-full flex flex-col justify-center px-12 lg:px-20 xl:px-28 animate-slideLeft">

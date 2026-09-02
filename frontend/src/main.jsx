@@ -3,6 +3,18 @@ import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import ErrorBoundary from "./components/ErrorBoundary.jsx";
 import "./styles/index.css";
+import cssText from "./styles/index.css?inline";
+
+// Auto-inject CSS into page head so styles are guaranteed to load in Shopify
+if (typeof document !== "undefined") {
+  const styleId = "nixie-widget-styles";
+  if (!document.getElementById(styleId)) {
+    const style = document.createElement("style");
+    style.id = styleId;
+    style.textContent = cssText;
+    document.head.appendChild(style);
+  }
+}
 
 let root = null;
 

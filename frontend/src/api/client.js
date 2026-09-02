@@ -13,8 +13,6 @@ const REQUIRED_ANALYZE_FIELDS = [
   "primaryFabric",
   "secondaryFabrics",
   "price",
-  "allOutfits",
-  "validFabricTypes",
 ];
 
 function assertAnalyzeShape(data) {

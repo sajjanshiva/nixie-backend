@@ -23,7 +23,7 @@ export default function ResultStep({ data, onContactUs, onAnalyzeAnother }) {
     <div className="w-full h-screen max-h-screen overflow-hidden bg-nixieCream font-nixie flex flex-col md:flex-row">
 
       {/* ── MOBILE VIEW: scrollable stacked layout ── */}
-      <div className="flex md:hidden flex-col h-full overflow-y-auto">
+      <div className="nixie-mobile flex md:hidden flex-col h-full overflow-y-auto">
         {/* Outfit photo — cleanly padded and framed */}
         <div className="w-full flex items-center justify-center p-6 bg-nixieCream">
           <div className="w-full max-w-[280px] max-h-[320px] overflow-hidden shadow-sm border border-gray-200">
@@ -84,7 +84,7 @@ export default function ResultStep({ data, onContactUs, onAnalyzeAnother }) {
       </div>
 
       {/* ── DESKTOP VIEW: single-page side-by-side layout (NO scrollbar) ── */}
-      <div className="hidden md:flex w-full h-full items-center">
+      <div className="nixie-desktop hidden md:flex w-full h-full items-center">
 
         {/* Left Side: Outfit Photo */}
         <div className="w-[45%] h-full flex items-center justify-center p-10 lg:p-14 xl:p-16 animate-slideLeft">
