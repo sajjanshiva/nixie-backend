@@ -34,3 +34,23 @@ html, body {
     display: flex !important;
   }
 }
+
+@keyframes checkDraw {
+  0% {
+    stroke-dashoffset: 40;
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+.animate-checkDraw {
+  stroke-dasharray: 40;
+  stroke-dashoffset: 40;
+  animation: checkDraw 0.75s 0.25s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
