@@ -1,181 +1,158 @@
-import { useState } from "react";
-import { recalculatePrice } from "../api/client";
-import ConfidenceBadge from "./ConfidenceBadge";
-import StepIndicator from "./StepIndicator";
+export default function ResultStep({ data, onContactUs, onAnalyzeAnother }) {
+  // Build fabric description text
+  const fabricParts = [data.primaryFabric];
 
-export default function ResultStep({ data, onUpdate, onContactUs, onAnalyzeAnother }) {
-  const [outfitType, setOutfitType] = useState(data.outfitType);
-  const [primaryFabric, setPrimaryFabric] = useState(data.primaryFabric);
-  // Fixed count, matching whatever the AI returned - no adding/removing slots.
-  const [secondaryFabrics, setSecondaryFabrics] = useState(
-    data.secondaryFabrics.map((f) => f.name)
-  );
-  const [confidences] = useState({
-    outfit: data.outfitConfidence,
-    primary: data.primaryFabricConfidence,
-    secondary: data.secondaryFabrics.map((f) => f.confidence),
-  });
-  const [price, setPrice] = useState(data.price);
-  const [recalculating, setRecalculating] = useState(false);
-  const [error, setError] = useState(null);
-
-  async function recalc(nextOutfitType, nextPrimary, nextSecondaries) {
-    setRecalculating(true);
-    setError(null);
-    try {
-      const fabrics = [
-        { name: nextPrimary, role: "primary" },
-        ...nextSecondaries.map((name) => ({ name, role: "secondary" })),
-      ];
-      const { price: newPrice } = await recalculatePrice(nextOutfitType, fabrics);
-      setPrice(newPrice);
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setRecalculating(false);
-    }
+  if (data.secondaryFabrics && data.secondaryFabrics.length > 0) {
+    fabricParts.push(...data.secondaryFabrics.map((f) => f.name));
   }
 
-  function handleOutfitChange(next) {
-    setOutfitType(next);
-    recalc(next, primaryFabric, secondaryFabrics);
-  }
+  const fabricText =
+    fabricParts.length === 1
+      ? fabricParts[0]
+      : fabricParts.slice(0, -1).join(", ") +
+        " and " +
+        fabricParts[fabricParts.length - 1];
 
-  function handlePrimaryChange(next) {
-    setPrimaryFabric(next);
-    recalc(outfitType, next, secondaryFabrics);
-  }
-
-  function handleSecondaryChange(index, next) {
-    const updated = [...secondaryFabrics];
-    updated[index] = next;
-    setSecondaryFabrics(updated);
-    recalc(outfitType, primaryFabric, updated);
-  }
-
-  function currentSnapshot() {
-    return {
-      outfitType,
-      primaryFabric,
-      secondaryFabrics: secondaryFabrics.map((name, i) => ({
-        name,
-        confidence: confidences.secondary[i],
-      })),
-      price,
-    };
-  }
-
-  function handleContactClick() {
-    onUpdate(currentSnapshot());
-    onContactUs();
-  }
-
-  function fabricOptionsExcluding(excludeValues) {
-    return data.validFabricTypes.filter((f) => !excludeValues.includes(f));
-  }
+  const comment =
+    data.aiComment ||
+    (data.outfitType
+      ? `What a gorgeous ${data.outfitType.toLowerCase()}!`
+      : "Such a stunning choice!");
 
   return (
-    <div className="min-h-screen bg-nixieCream flex flex-col items-center px-4 py-12 font-nixie">
-      <StepIndicator current={1} />
+    <div className="w-full h-screen max-h-screen overflow-hidden bg-nixieCream font-nixie flex flex-col md:flex-row">
 
-      <div className="bg-nixieCard rounded-nixie shadow-md p-8 w-full max-w-xl animate-fadeIn">
-        <h2 className="text-2xl text-nixieText font-semibold mb-6">Here's what we found</h2>
-
-        <div className="w-full h-64 bg-nixieCream border border-gray-200 rounded-nixie mb-6 flex items-center justify-center overflow-hidden">
-          <img src={data.imageUrl} alt="Your reference" className="max-w-full max-h-full object-contain" />
-        </div>
-
-        {/* Outfit Type */}
-        <div className="flex items-center justify-between mb-1">
-          <label className="block text-sm text-nixieGray">Outfit Type</label>
-          <ConfidenceBadge value={confidences.outfit} />
-        </div>
-        <select
-          value={outfitType}
-          onChange={(e) => handleOutfitChange(e.target.value)}
-          className="w-full border border-gray-300 rounded-lg px-3 py-2.5 mb-4 text-nixieText focus:outline-none focus:ring-2 focus:ring-nixieCyan/50 focus:border-nixieCyanDark transition-shadow"
-        >
-          {data.allOutfits.map((o) => (
-            <option key={o.name} value={o.name}>{o.name}</option>
-          ))}
-        </select>
-
-        {/* Primary Fabric */}
-        <div className="flex items-center justify-between mb-1">
-          <label className="block text-sm text-nixieGray">Primary Fabric</label>
-          <ConfidenceBadge value={confidences.primary} />
-        </div>
-        <select
-          value={primaryFabric}
-          onChange={(e) => handlePrimaryChange(e.target.value)}
-          className="w-full border border-gray-300 rounded-lg px-3 py-2.5 mb-4 text-nixieText focus:outline-none focus:ring-2 focus:ring-nixieCyan/50 focus:border-nixieCyanDark transition-shadow"
-        >
-          {fabricOptionsExcluding(secondaryFabrics).concat(primaryFabric)
-            .filter((v, i, arr) => arr.indexOf(v) === i)
-            .sort()
-            .map((f) => <option key={f} value={f}>{f}</option>)}
-        </select>
-
-        {/* Secondary Fabric(s) - count fixed to whatever the AI detected */}
-        {secondaryFabrics.map((fabricName, i) => (
-          <div key={i}>
-            <div className="flex items-center justify-between mb-1">
-              <label className="block text-sm text-nixieGray">Secondary Fabric {i + 1}</label>
-              <ConfidenceBadge value={confidences.secondary[i]} />
-            </div>
-            <select
-              value={fabricName}
-              onChange={(e) => handleSecondaryChange(i, e.target.value)}
-              className="w-full border border-gray-300 rounded-lg px-3 py-2.5 mb-4 text-nixieText focus:outline-none focus:ring-2 focus:ring-nixieCyan/50 focus:border-nixieCyanDark transition-shadow"
-            >
-              {fabricOptionsExcluding([primaryFabric, ...secondaryFabrics.filter((_, j) => j !== i)])
-                .concat(fabricName)
-                .filter((v, idx, arr) => arr.indexOf(v) === idx)
-                .sort()
-                .map((f) => <option key={f} value={f}>{f}</option>)}
-            </select>
+      {/* ── MOBILE VIEW: scrollable stacked layout ── */}
+      <div className="flex md:hidden flex-col h-full overflow-y-auto">
+        {/* Outfit photo — cleanly padded and framed */}
+        <div className="w-full flex items-center justify-center p-6 bg-nixieCream">
+          <div className="w-full max-w-[280px] max-h-[320px] overflow-hidden shadow-sm border border-gray-200">
+            <img
+              src={data.imageUrl}
+              alt="Your reference outfit"
+              className="w-full h-full object-cover object-top"
+            />
           </div>
-        ))}
-
-        <div className="bg-nixieCream rounded-nixie p-5 mb-6 text-center border border-gray-100">
-          <p className="text-sm text-nixieGray mb-1">Estimated Price</p>
-          <p className={`text-3xl font-semibold text-nixieText transition-opacity ${recalculating ? "opacity-40" : "opacity-100"}`}>
-            ₹{price.finalPrice.toLocaleString("en-IN")}
-          </p>
-          <p className="text-xs text-nixieGray mt-2">
-            This is an estimate only. Final price may vary based on actual fabric, design and customization.
-          </p>
         </div>
 
-        {error && <p className="text-red-600 text-sm mb-4 bg-red-50 border border-red-200 rounded-lg px-3 py-2">{error}</p>}
+        {/* Info below */}
+        <div className="flex-1 px-6 pb-8 flex flex-col justify-center animate-slideUp">
+          <h2 className="text-2xl font-normal italic text-nixieCyanDark leading-snug mb-3">
+            {comment}
+          </h2>
 
-        <div className="flex gap-3 mb-3">
-          <button
-            type="button"
-            onClick={onAnalyzeAnother}
-            className="flex-1 border border-gray-300 hover:bg-gray-50 transition-colors text-nixieText font-medium px-4 py-3 rounded-full"
-          >
-            Analyze Another
-          </button>
-          <button
-            type="button"
-            disabled={recalculating}
-            onClick={handleContactClick}
-            className="flex-1 bg-nixieCyan hover:bg-nixieCyanDark active:scale-[0.99] transition-all text-nixieText font-medium px-4 py-3 rounded-full disabled:opacity-50"
-          >
-            Contact Us
-          </button>
+          <p className="text-nixieText text-sm sm:text-base leading-relaxed mb-5">
+            Nixie detected that this is a{" "}
+            <span className="font-semibold underline underline-offset-2">
+              {data.outfitType}
+            </span>{" "}
+            made of{" "}
+            <span className="font-semibold underline underline-offset-2">
+              {fabricText}
+            </span>
+            .
+          </p>
+
+          <div className="mb-6">
+            <p className="text-nixieGray text-xs sm:text-sm mb-0.5">
+              Making this will cost you
+            </p>
+
+            <p className="text-3xl sm:text-4xl font-bold text-nixieCyanDark">
+              ₹{data.price.finalPrice.toLocaleString("en-IN")}
+            </p>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-3">
+            <button
+              type="button"
+              onClick={onContactUs}
+              className="bg-nixieCyanDark text-white font-medium px-6 py-3 rounded-none shadow-[3px_3px_0px_#F5A623] hover:brightness-105 active:translate-x-0.5 active:translate-y-0.5 transition-all text-sm"
+            >
+              Make it for me
+            </button>
+
+            <button
+              type="button"
+              onClick={onAnalyzeAnother}
+              className="border-2 border-nixieCyanDark text-nixieCyanDark bg-transparent hover:bg-nixieCyan/10 font-medium px-6 py-3 rounded-none transition-all text-sm active:translate-x-0.5 active:translate-y-0.5"
+            >
+              Check another outfit
+            </button>
+          </div>
         </div>
-
-        <a
-          href="https://www.instagram.com/thenixie.in"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 text-nixieGray hover:text-nixieText transition-colors text-sm"
-        >
-          Follow us on Instagram · @thenixie.in
-        </a>
       </div>
+
+      {/* ── DESKTOP VIEW: single-page side-by-side layout (NO scrollbar) ── */}
+      <div className="hidden md:flex w-full h-full items-center">
+
+        {/* Left Side: Outfit Photo */}
+        <div className="w-[45%] h-full flex items-center justify-center p-10 lg:p-14 xl:p-16 animate-slideLeft">
+          <div className="max-h-[72vh] max-w-[380px] w-auto h-auto overflow-hidden shadow-md border border-gray-200/80 bg-white">
+            <img
+              src={data.imageUrl}
+              alt="Your reference outfit"
+              className="w-full max-h-[72vh] object-cover object-top"
+            />
+          </div>
+        </div>
+
+        {/* Right Side: Analysis & CTAs */}
+        <div className="w-[55%] h-full flex flex-col justify-center px-10 lg:px-16 xl:px-20 animate-slideRight">
+          <div className="max-w-lg">
+
+            {/* AI Comment heading */}
+            <h2 className="text-3xl lg:text-4xl font-normal italic text-nixieCyanDark leading-tight mb-6">
+              {comment}
+            </h2>
+
+            {/* Detection sentence */}
+            <p className="text-nixieText text-base lg:text-lg leading-relaxed mb-8">
+              Nixie detected that this is a{" "}
+              <span className="font-semibold underline underline-offset-4 decoration-nixieCyanDark/80">
+                {data.outfitType}
+              </span>{" "}
+              made of{" "}
+              <span className="font-semibold underline underline-offset-4 decoration-nixieCyanDark/80">
+                {fabricText}
+              </span>
+              .
+            </p>
+
+            {/* Price block */}
+            <div className="mb-9">
+              <p className="text-nixieGray text-sm mb-1">
+                Making this will cost you
+              </p>
+
+              <p className="text-5xl font-bold text-nixieCyanDark tracking-tight">
+                ₹{data.price.finalPrice.toLocaleString("en-IN")}
+              </p>
+            </div>
+
+            {/* CTA buttons */}
+            <div className="flex items-center gap-4">
+              <button
+                type="button"
+                onClick={onContactUs}
+                className="bg-nixieCyanDark text-white font-medium px-8 py-3.5 rounded-none shadow-[4px_4px_0px_#F5A623] hover:brightness-105 active:translate-x-0.5 active:translate-y-0.5 transition-all text-base"
+              >
+                Make it for me
+              </button>
+
+              <button
+                type="button"
+                onClick={onAnalyzeAnother}
+                className="border-2 border-nixieCyanDark text-nixieCyanDark bg-transparent hover:bg-nixieCyan/10 font-medium px-8 py-3.5 rounded-none transition-all text-base active:translate-x-0.5 active:translate-y-0.5"
+              >
+                Check another outfit
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
     </div>
   );
 }

@@ -2,7 +2,7 @@ const express = require("express");
 const upload = require("../middleware/upload");
 const { uploadImage } = require("../services/imagekit");
 const { detectOutfitAndFabric } = require("../services/gemini");
-const { calculatePrice, getAllOutfits, getValidFabricTypes } = require("../services/pricing");
+const { calculatePrice } = require("../services/pricing");
 
 const router = express.Router();
 
@@ -25,14 +25,10 @@ router.post("/analyze", upload.single("image"), async (req, res) => {
     res.json({
       imageUrl,
       outfitType: detection.outfitType,
-      outfitConfidence: detection.outfitConfidence,
       primaryFabric: detection.primaryFabric,
-      primaryFabricConfidence: detection.primaryFabricConfidence,
       secondaryFabrics: detection.secondaryFabrics,
       price,
-      // sent so the frontend can populate override dropdowns without another round trip
-      allOutfits: getAllOutfits(),
-      validFabricTypes: getValidFabricTypes(),
+      aiComment: detection.aiComment,
     });
   } catch (err) {
     console.error("[/api/analyze] error:", err);

@@ -39,10 +39,6 @@ export default function App() {
     }
   }
 
-  function handleResultUpdated(updates) {
-    persist(STEPS.RESULT, { ...orderData, ...updates });
-  }
-
   function handleGoToContact() {
     persist(STEPS.CONTACT, orderData);
   }
@@ -72,7 +68,6 @@ export default function App() {
       return (
         <ResultStep
           data={orderData}
-          onUpdate={handleResultUpdated}
           onContactUs={handleGoToContact}
           onAnalyzeAnother={handleAnalyzeAnother}
         />

@@ -42,13 +42,26 @@ ${outfitList}
 FABRIC(S): identify the primary fabric (the one covering most of the garment) from this list: ${JSON.stringify(validFabrics)}
 Only include a secondary fabric if it visibly covers a significant portion of the garment - ignore small trims, buttons, or thin accent details. List at most 2 secondary fabrics. If you only see one fabric, do not invent a second one.
 
+COMMENT: write a warm, friendly, outfit-specific compliment in simple conversational English (max 4-6 words). You can mention the specific outfit (e.g. "top", "dress", "lehenga", "saree", "co-ord set") or its color and style. You can use words like "lovely", "fabulous", "pretty", "chic", "stylish", or "gorgeous", but DO NOT over-exaggerate with complex, deep, pretentious words (avoid words like "hue", "exquisite", "divine", "breathtaking", "radiant", "shimmering", or "craftsmanship"). Keep it simple, friendly, and relatable!
+Good examples:
+- "What a lovely top!"
+- "Such a pretty dress!"
+- "What a fabulous look!"
+- "Love the color on this top!"
+- "Such a chic, stylish co-ord set!"
+- "What a lovely, elegant style!"
+- "Such a pretty outfit!"
+- "Love the design and fit!"
+Keep it natural and friendly!
+
 Respond with ONLY a JSON object, no markdown formatting, no explanation, in exactly this shape:
 {
   "outfitType": "<exact name from the outfit list>",
   "outfitConfidence": <integer 0-100>,
   "primaryFabric": "<exact fabric name from the fabric list>",
   "primaryFabricConfidence": <integer 0-100>,
-  "secondaryFabrics": [{"name": "<exact fabric name>", "confidence": <integer 0-100>}]
+  "secondaryFabrics": [{"name": "<exact fabric name>", "confidence": <integer 0-100>}],
+  "aiComment": "<short specific stylist compliment about this outfit>"
 }
 If there are no secondary fabrics, use an empty array for "secondaryFabrics".`;
 
@@ -70,12 +83,19 @@ If there are no secondary fabrics, use an empty array for "secondaryFabrics".`;
     }
   }
 
+  const fallbackComment = `What a stunning ${parsed.outfitType.toLowerCase()}!`;
+  const aiComment =
+    typeof parsed.aiComment === "string" && parsed.aiComment.trim().length > 3
+      ? parsed.aiComment.trim()
+      : fallbackComment;
+
   return {
     outfitType: parsed.outfitType,
     outfitConfidence: parsed.outfitConfidence,
     primaryFabric: parsed.primaryFabric,
     primaryFabricConfidence: parsed.primaryFabricConfidence,
     secondaryFabrics,
+    aiComment,
   };
 }
 

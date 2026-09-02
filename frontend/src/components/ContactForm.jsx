@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { submitLead } from "../api/client";
-import StepIndicator from "./StepIndicator";
 
 const FIELDS = [
   { key: "name", label: "Name", type: "text" },
@@ -41,23 +40,21 @@ export default function ContactForm({ data, onBack, onSubmitted }) {
   }
 
   return (
-    <div className="min-h-screen bg-nixieCream flex flex-col items-center px-4 py-12 font-nixie">
-      <StepIndicator current={2} />
-
-      <div className="bg-nixieCard rounded-nixie shadow-md p-8 w-full max-w-xl animate-fadeIn">
-        <h2 className="text-2xl text-nixieText font-semibold mb-1">Get in Touch</h2>
+    <div className="min-h-screen bg-nixieCream flex flex-col items-center justify-center px-4 py-8 sm:py-12 font-nixie">
+      <div className="bg-white rounded-2xl shadow-sm border border-nixieCyan/20 p-5 sm:p-8 w-full max-w-xl animate-slideUp">
+        <h2 className="text-2xl md:text-3xl text-nixieCyanDark font-bold mb-1">Get in Touch</h2>
         <p className="text-sm text-nixieGray mb-6">
-          Share your details and our team will get back to you.
+          Share your details and our stylist team will get back to you.
         </p>
 
         {FIELDS.map((f) => (
           <div key={f.key} className="mb-4">
-            <label className="block text-sm text-nixieGray mb-1">{f.label} *</label>
+            <label className="block text-xs font-semibold text-nixieGray uppercase tracking-wider mb-1.5">{f.label} *</label>
             <input
               type={f.type}
               value={values[f.key]}
               onChange={(e) => setValues((prev) => ({ ...prev, [f.key]: e.target.value }))}
-              className="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-nixieText focus:outline-none focus:ring-2 focus:ring-nixieCyan/50 focus:border-nixieCyanDark transition-shadow"
+              className="w-full border border-gray-200 rounded-lg px-3.5 py-2.5 text-nixieText focus:outline-none focus:ring-2 focus:ring-nixieCyan/50 focus:border-nixieCyanDark transition-all"
             />
           </div>
         ))}
@@ -68,11 +65,11 @@ export default function ContactForm({ data, onBack, onSubmitted }) {
           </p>
         )}
 
-        <div className="flex gap-3 mb-3">
+        <div className="flex justify-center items-center gap-4 mt-7 mb-4">
           <button
             type="button"
             onClick={onBack}
-            className="flex-1 border border-gray-300 hover:bg-gray-50 transition-colors text-nixieText font-medium px-4 py-3 rounded-full"
+            className="flex-1 sm:flex-initial sm:min-w-[220px] h-11 border-2 border-nixieCyanDark text-nixieCyanDark hover:bg-nixieCyan/10 transition-colors font-medium px-8 rounded-none text-sm sm:text-base active:translate-x-0.5 active:translate-y-0.5 flex items-center justify-center"
           >
             Back
           </button>
@@ -80,9 +77,9 @@ export default function ContactForm({ data, onBack, onSubmitted }) {
             type="button"
             disabled={!allFilled || submitting}
             onClick={handleSubmit}
-            className="flex-1 bg-nixieCyan hover:bg-nixieCyanDark active:scale-[0.99] transition-all text-nixieText font-medium px-4 py-3 rounded-full disabled:opacity-50"
+            className="flex-1 sm:flex-initial sm:min-w-[230px] h-11 bg-nixieCyanDark hover:brightness-105 active:translate-x-0.5 active:translate-y-0.5 transition-all text-white font-medium px-10 rounded-none shadow-[3px_3px_0px_#F5A623] text-sm sm:text-base disabled:opacity-50 flex items-center justify-center"
           >
-            {submitting ? "Submitting..." : "Get in Touch"}
+            {submitting ? "Submitting..." : "Submit"}
           </button>
         </div>
 

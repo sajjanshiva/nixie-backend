@@ -38,15 +38,6 @@ export async function analyzeOutfit(file) {
   return assertAnalyzeShape(await handleResponse(res));
 }
 
-export async function recalculatePrice(outfitType, fabrics) {
-  const res = await fetch(`${API_BASE_URL}/api/recalculate-price`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ outfitType, fabrics }),
-  });
-  return handleResponse(res);
-}
-
 export async function submitLead(payload) {
   const res = await fetch(`${API_BASE_URL}/api/submit-lead`, {
     method: "POST",
