@@ -5,6 +5,7 @@ export default defineConfig({
   plugins: [react()],
   build: {
     assetsInlineLimit: 1000000,
+    cssMinify: false,
     rollupOptions: {
       output: {
         entryFileNames: "nixie-widget.js",
