@@ -16,8 +16,6 @@ function isValidOrderData(d) {
     typeof d.outfitType === "string" &&
     typeof d.primaryFabric === "string" &&
     Array.isArray(d.secondaryFabrics) &&
-    Array.isArray(d.allOutfits) &&
-    Array.isArray(d.validFabricTypes) &&
     typeof d.price?.finalPrice === "number"
   );
 }
