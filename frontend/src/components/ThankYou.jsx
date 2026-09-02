@@ -5,7 +5,6 @@ export default function ThankYou({ onAnalyzeAnother }) {
       desc: "Our stylist team personally goes through your uploaded outfit reference.",
       icon: (
         <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-          {/* Garment silhouette / lookbook hanger */}
           <path d="M12 3a3 3 0 0 0-3 3c0 1.3.8 2.4 2 2.8L3 15a2 2 0 0 0 1.2 3h15.6a2 2 0 0 0 1.2-3L13 8.8C14.2 8.4 15 7.3 15 6a3 3 0 0 0-3-3z" />
           <path d="M9 18v3" />
           <path d="M15 18v3" />
@@ -17,7 +16,6 @@ export default function ThankYou({ onAnalyzeAnother }) {
       desc: "We'll contact you on your phone or email to confirm the final design.",
       icon: (
         <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-          {/* Stylist phone / chat consultation */}
           <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
           <path d="M14 3h7v7" />
           <path d="M10 14L21 3" />
@@ -29,7 +27,6 @@ export default function ThankYou({ onAnalyzeAnother }) {
       desc: "You get a final confirmed price before we start making anything.",
       icon: (
         <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-          {/* Verified price approval shield badge */}
           <path d="M12 2l7 4v6c0 5-3.5 9-7 10-3.5-1-7-5-7-10V6l7-4z" />
           <path d="M9 12l2 2 4-4" />
         </svg>
@@ -38,27 +35,16 @@ export default function ThankYou({ onAnalyzeAnother }) {
   ];
 
   return (
-    <div className="min-h-screen bg-nixieCream flex flex-col items-center justify-center px-4 py-12 font-nixie text-center relative overflow-hidden">
-
-      {/* Ambient background accents */}
-      <div className="fixed top-[-80px] right-[-80px] w-72 h-72 rounded-full bg-nixieCyan/10 animate-breathe pointer-events-none" />
-      <div className="fixed bottom-[-60px] left-[-60px] w-64 h-64 rounded-full bg-nixieYellow/10 animate-breathe pointer-events-none" style={{ animationDelay: "1.5s" }} />
+    <div className="min-h-screen bg-nixieCream flex flex-col items-center justify-center px-4 py-12 font-nixie text-center relative">
 
       <div className="w-full max-w-lg relative z-10">
 
-        {/* Animated Checkmark Badge */}
+        {/* Clean Checkmark Badge (NO bubbles) */}
         <div className="animate-popIn mb-6">
-          <div className="relative w-20 h-20 mx-auto">
-            {/* Soft pulsing aura */}
-            <div className="absolute -inset-2 rounded-full bg-nixieCyan/25 blur-sm animate-pulseRing" />
-            {/* Delicate rotating golden dashed ring */}
-            <div className="absolute inset-0 rounded-full border-2 border-dashed border-nixieYellow/60 animate-spinSlow" />
-            {/* Core circle */}
-            <div className="relative w-20 h-20 rounded-full bg-nixieCyanDark flex items-center justify-center shadow-lg shadow-nixieCyanDark/25">
-              <svg className="w-10 h-10 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.8} strokeLinecap="round" strokeLinejoin="round">
-                <path className="animate-checkDraw" d="M5 13l4 4L19 7" />
-              </svg>
-            </div>
+          <div className="w-20 h-20 mx-auto rounded-full bg-nixieCyanDark flex items-center justify-center shadow-md">
+            <svg className="w-10 h-10 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.8} strokeLinecap="round" strokeLinejoin="round">
+              <path className="animate-checkDraw" d="M5 13l4 4L19 7" />
+            </svg>
           </div>
         </div>
 
