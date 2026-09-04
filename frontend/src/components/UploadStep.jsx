@@ -76,11 +76,11 @@ export default function UploadStep({ onImageSelected, loading, error }) {
 
       </div>
 
-      {/* ── DESKTOP VIEW (Framed to 1366x768 px) ── */}
-      <div className="nixie-desktop hidden md:flex w-full max-w-[1366px] h-[768px] md:max-h-[768px] mx-auto">
+      {/* ── DESKTOP VIEW (Full-width edge-to-edge with 768px height framing) ── */}
+      <div className="nixie-desktop hidden md:flex w-full h-screen max-h-[768px] min-h-[550px]">
 
         {/* Left: headline + button */}
-        <div className="flex-1 h-full flex flex-col justify-center px-12 lg:px-20 xl:px-28 animate-slideLeft">
+        <div className="flex-1 h-full flex flex-col justify-center px-8 lg:px-16 xl:px-24 animate-slideLeft">
           <div className="max-w-md">
             <h1 className="text-4xl lg:text-5xl font-bold leading-tight text-nixieCyanDark mb-1">
               Found a look you<br />can&apos;t stop
@@ -125,12 +125,12 @@ export default function UploadStep({ onImageSelected, loading, error }) {
           </div>
         </div>
 
-        {/* Right: model photo — right-aligned flush with edge, no border line, object-contain */}
-        <div className="w-[48%] xl:w-[45%] h-full flex items-center justify-end bg-nixieCream animate-slideRight overflow-hidden">
+        {/* Right: model photo — fills right half completely with zero gap */}
+        <div className="w-1/2 h-full flex items-center justify-end bg-nixieCream animate-slideRight overflow-hidden">
           <img
             src={modelHero}
             alt="Fashion model"
-            className="h-full w-auto object-contain object-right-top"
+            className="h-full w-full object-cover object-top"
           />
         </div>
 

@@ -83,8 +83,8 @@ export default function ResultStep({ data, onContactUs, onAnalyzeAnother }) {
         </div>
       </div>
 
-      {/* ── DESKTOP VIEW (Framed to 1366x768 px) ── */}
-      <div className="nixie-desktop hidden md:flex w-full max-w-[1366px] h-[768px] md:max-h-[768px] mx-auto items-center">
+      {/* ── DESKTOP VIEW (Full-width edge-to-edge with 768px height framing) ── */}
+      <div className="nixie-desktop hidden md:flex w-full h-screen max-h-[768px] min-h-[550px] items-center">
 
         {/* Left Side: Outfit Photo */}
         <div className="w-[45%] h-full flex items-center justify-center p-10 lg:p-14 xl:p-16 animate-slideLeft">
