@@ -20,7 +20,7 @@ export default function ResultStep({ data, onContactUs, onAnalyzeAnother }) {
       : "Such a stunning choice!");
 
   return (
-    <div className="w-full h-screen max-h-screen overflow-hidden bg-nixieCream font-nixie flex flex-col md:flex-row">
+    <div className="w-full bg-nixieCream font-nixie flex flex-col md:flex-row justify-center overflow-hidden">
 
       {/* ── MOBILE VIEW: scrollable stacked layout ── */}
       <div className="nixie-mobile flex md:hidden flex-col h-full overflow-y-auto">
@@ -83,8 +83,8 @@ export default function ResultStep({ data, onContactUs, onAnalyzeAnother }) {
         </div>
       </div>
 
-      {/* ── DESKTOP VIEW: single-page side-by-side layout (NO scrollbar) ── */}
-      <div className="nixie-desktop hidden md:flex w-full h-full items-center">
+      {/* ── DESKTOP VIEW (Framed to 1366x768 px) ── */}
+      <div className="nixie-desktop hidden md:flex w-full max-w-[1366px] h-[768px] md:max-h-[768px] mx-auto items-center">
 
         {/* Left Side: Outfit Photo */}
         <div className="w-[45%] h-full flex items-center justify-center p-10 lg:p-14 xl:p-16 animate-slideLeft">

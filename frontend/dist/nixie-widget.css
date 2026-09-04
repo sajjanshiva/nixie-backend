@@ -629,6 +629,9 @@ video {
 .h-9 {
   height: 2.25rem;
 }\r
+.h-\\[768px\\] {
+  height: 768px;
+}\r
 .h-auto {
   height: auto;
 }\r
@@ -694,6 +697,9 @@ video {
 }\r
 .w-full {
   width: 100%;
+}\r
+.max-w-\\[1366px\\] {
+  max-width: 1366px;
 }\r
 .max-w-\\[280px\\] {
   max-width: 280px;
@@ -1540,6 +1546,10 @@ html, body {\r
 
   .md\\:hidden {
     display: none;
+  }
+
+  .md\\:max-h-\\[768px\\] {
+    max-height: 768px;
   }
 
   .md\\:flex-row {

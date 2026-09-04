@@ -23,7 +23,7 @@ export default function UploadStep({ onImageSelected, loading, error }) {
   }
 
   return (
-    <div className="w-full h-screen max-h-screen overflow-hidden bg-nixieCream font-nixie flex flex-col md:flex-row">
+    <div className="w-full bg-nixieCream font-nixie flex flex-col md:flex-row justify-center overflow-hidden">
 
       {/* ── MOBILE VIEW: Simple, natural full-image layout (Zero crop, edge-to-edge photo + clean text below) ── */}
       <div className="nixie-mobile flex md:hidden flex-col h-full overflow-y-auto bg-nixieCream">
@@ -76,8 +76,8 @@ export default function UploadStep({ onImageSelected, loading, error }) {
 
       </div>
 
-      {/* ── DESKTOP VIEW ── */}
-      <div className="nixie-desktop hidden md:flex w-full h-full">
+      {/* ── DESKTOP VIEW (Framed to 1366x768 px) ── */}
+      <div className="nixie-desktop hidden md:flex w-full max-w-[1366px] h-[768px] md:max-h-[768px] mx-auto">
 
         {/* Left: headline + button */}
         <div className="flex-1 h-full flex flex-col justify-center px-12 lg:px-20 xl:px-28 animate-slideLeft">
