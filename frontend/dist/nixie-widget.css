@@ -659,9 +659,6 @@ video {
 .w-0\.5 {
   width: 0.125rem;
 }
-.w-1\/2 {
-  width: 50%;
-}
 .w-10 {
   width: 2.5rem;
 }
@@ -894,6 +891,9 @@ video {
 .justify-center {
   justify-content: center;
 }
+.justify-between {
+  justify-content: space-between;
+}
 .gap-1 {
   gap: 0.25rem;
 }
@@ -1060,9 +1060,17 @@ video {
 .to-nixieYellow\/40 {
   --tw-gradient-to: rgb(245 166 35 / 0.4) var(--tw-gradient-to-position);
 }
+.object-contain {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
+}
+.object-right-top {
+  -o-object-position: right top;
+     object-position: right top;
 }
 .object-top {
   -o-object-position: top;

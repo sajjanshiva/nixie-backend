@@ -23,7 +23,7 @@ export default function UploadStep({ onImageSelected, loading, error }) {
   }
 
   return (
-    <div className="w-full bg-nixieCream font-nixie flex flex-col md:flex-row justify-center overflow-hidden">
+    <div className="w-full h-screen max-h-[768px] min-h-[550px] bg-nixieCream font-nixie flex flex-col md:flex-row overflow-hidden">
 
       {/* ── MOBILE VIEW: Simple, natural full-image layout (Zero crop, edge-to-edge photo + clean text below) ── */}
       <div className="nixie-mobile flex md:hidden flex-col h-full overflow-y-auto bg-nixieCream">
@@ -76,8 +76,8 @@ export default function UploadStep({ onImageSelected, loading, error }) {
 
       </div>
 
-      {/* ── DESKTOP VIEW (Full-width edge-to-edge with 768px height framing) ── */}
-      <div className="nixie-desktop hidden md:flex w-full h-screen max-h-[768px] min-h-[550px]">
+      {/* ── DESKTOP VIEW ── */}
+      <div className="nixie-desktop hidden md:flex w-full h-full justify-between">
 
         {/* Left: headline + button */}
         <div className="flex-1 h-full flex flex-col justify-center px-8 lg:px-16 xl:px-24 animate-slideLeft">
@@ -125,12 +125,12 @@ export default function UploadStep({ onImageSelected, loading, error }) {
           </div>
         </div>
 
-        {/* Right: model photo — fills right half completely with zero gap */}
-        <div className="w-1/2 h-full flex items-center justify-end bg-nixieCream animate-slideRight overflow-hidden">
+        {/* Right: model photo — full uncropped photo, scaled to height, flush to the right edge */}
+        <div className="h-full flex items-center justify-end shrink-0 animate-slideRight overflow-hidden">
           <img
             src={modelHero}
             alt="Fashion model"
-            className="h-full w-full object-cover object-top"
+            className="h-full w-auto object-contain object-right-top block"
           />
         </div>
 
