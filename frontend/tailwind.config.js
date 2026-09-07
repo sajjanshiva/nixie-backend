@@ -13,9 +13,9 @@ export default {
         nixieYellow: "#F5A623",
       },
       fontFamily: {
-        nixieHeading: ['"Proza Libre"', "var(--font-heading-family)", "serif", "sans-serif"],
-        nixieBody: ["Archivo", "var(--font-body-family)", "system-ui", "sans-serif"],
-        nixie: ["Archivo", "var(--font-body-family)", "system-ui", "sans-serif"],
+        nixieHeading: ['"DM Sans"', "var(--font-heading-family)", "sans-serif"],
+        nixieBody: ['"Golos Text"', "var(--font-body-family)", "sans-serif"],
+        nixie: ['"Golos Text"', "var(--font-body-family)", "sans-serif"],
       },
       borderRadius: {
         nixie: "1rem",

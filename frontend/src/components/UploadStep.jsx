@@ -28,12 +28,12 @@ export default function UploadStep({ onImageSelected, loading, error }) {
       {/* ── MOBILE VIEW: Simple, natural full-image layout (Zero crop, edge-to-edge photo + clean text below) ── */}
       <div className="nixie-mobile flex md:hidden flex-col h-full overflow-y-auto bg-nixieCream">
 
-        {/* Full uncropped image with clean solid boundaries at top and bottom */}
-        <div className="w-full flex-shrink-0 border-y-[3.5px] border-nixieCyanDark">
+        {/* Portrait framing of model on mobile with clean solid boundaries at top and bottom */}
+        <div className="w-full flex-shrink-0 border-y-[3.5px] border-nixieCyanDark overflow-hidden h-[360px] sm:h-[420px]">
           <img
             src={modelHero}
             alt="Fashion model"
-            className="w-full h-auto block object-cover"
+            className="w-full h-full object-cover object-[78%_center]"
           />
         </div>
 
@@ -43,7 +43,7 @@ export default function UploadStep({ onImageSelected, loading, error }) {
             <h1 className="nixie-hero-title font-bold leading-tight text-nixieCyanDark mb-1">
               Found a look you<br />can&apos;t stop
             </h1>
-            <h1 className="nixie-hero-title-yellow font-bold italic text-nixieYellow mb-4">
+            <h1 className="nixie-hero-title-yellow font-bold text-nixieYellow mb-4">
               thinking about?
             </h1>
             <p className="nixie-subtext text-nixieText/75 leading-relaxed mb-6">
@@ -85,7 +85,7 @@ export default function UploadStep({ onImageSelected, loading, error }) {
             <h1 className="nixie-hero-title font-bold leading-tight text-nixieCyanDark mb-1">
               Found a look you<br />can&apos;t stop
             </h1>
-            <h1 className="nixie-hero-title-yellow font-bold italic text-nixieYellow mb-6">
+            <h1 className="nixie-hero-title-yellow font-bold text-nixieYellow mb-6">
               thinking about?
             </h1>
             <p className="nixie-subtext text-nixieText/80 leading-relaxed mb-8">

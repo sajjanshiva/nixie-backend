@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Proza+Libre:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Golos+Text:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -9,7 +9,7 @@ html, body {
   margin: 0;
   padding: 0;
   background-color: #FFFDF0;
-  font-family: Archivo, var(--font-body-family), system-ui, sans-serif;
+  font-family: "Golos Text", var(--font-body-family), system-ui, sans-serif;
   overflow-x: hidden;
 }
 
@@ -19,41 +19,45 @@ html, body {
   width: 100%;
   display: block;
   background-color: #FFFDF0;
-  font-family: Archivo, var(--font-body-family), system-ui, sans-serif;
+  font-family: "Golos Text", var(--font-body-family), system-ui, sans-serif;
 }
 
 /* Typography styles immune to Shopify 62.5% root scaling */
 #nixie-outfit-widget .nixie-hero-title {
-  font-family: "Proza Libre", var(--font-heading-family), serif, sans-serif;
+  font-family: "DM Sans", var(--font-heading-family), sans-serif;
   font-size: 44px !important;
   line-height: 1.15 !important;
+  font-style: normal !important;
   letter-spacing: -0.01em;
 }
 
 #nixie-outfit-widget .nixie-hero-title-yellow {
-  font-family: "Proza Libre", var(--font-heading-family), serif, sans-serif;
+  font-family: "DM Sans", var(--font-heading-family), sans-serif;
   font-size: 44px !important;
   line-height: 1.15 !important;
-  font-style: italic;
+  font-style: normal !important;
   letter-spacing: -0.01em;
 }
 
 #nixie-outfit-widget .nixie-subtext {
-  font-family: Archivo, var(--font-body-family), sans-serif;
+  font-family: "Golos Text", var(--font-body-family), sans-serif;
   font-size: 16px !important;
   line-height: 1.6 !important;
+  font-style: normal !important;
 }
 
 #nixie-outfit-widget .nixie-cta-btn {
-  font-family: Archivo, var(--font-body-family), sans-serif;
+  font-family: "Golos Text", var(--font-body-family), sans-serif;
   font-size: 16px !important;
   padding: 14px 32px !important;
+  font-style: normal !important;
 }
 
 #nixie-outfit-widget .nixie-card-heading {
-  font-family: "Proza Libre", var(--font-heading-family), serif, sans-serif;
+  font-family: "DM Sans", var(--font-heading-family), sans-serif;
   font-size: 32px !important;
   line-height: 1.2 !important;
+  font-style: normal !important;
 }
 
 @media (max-width: 767px) {
@@ -61,6 +65,7 @@ html, body {
   #nixie-outfit-widget .nixie-hero-title-yellow {
     font-size: 30px !important;
     line-height: 1.2 !important;
+    font-style: normal !important;
   }
 }
 
