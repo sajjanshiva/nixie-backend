@@ -1,5 +1,59 @@
-/* Fonts (DM Sans + Golos Text) are loaded via <link> tag injection in main.jsx
-   because @import in dynamically injected \3c style> tags is ignored by browsers */
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/dmsans/v17/rP2tp2ywxg089UriI5-g4vlH9VoD8CmcqZG40F9JadbnoEwAopxhTg.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/dmsans/v17/rP2tp2ywxg089UriI5-g4vlH9VoD8CmcqZG40F9JadbnoEwAkJxhTg.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/dmsans/v17/rP2tp2ywxg089UriI5-g4vlH9VoD8CmcqZG40F9JadbnoEwAfJthTg.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/dmsans/v17/rP2tp2ywxg089UriI5-g4vlH9VoD8CmcqZG40F9JadbnoEwARZthTg.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Golos Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/golostext/v7/q5uXsoe9Lv5t7Meb31EcOR9UdVTNs822plVRRQ5c.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Golos Text';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/golostext/v7/q5uXsoe9Lv5t7Meb31EcOR9UdVTNs822plVjRQ5c.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Golos Text';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/golostext/v7/q5uXsoe9Lv5t7Meb31EcOR9UdVTNs822plWPQg5c.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Golos Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/golostext/v7/q5uXsoe9Lv5t7Meb31EcOR9UdVTNs822plW2Qg5c.ttf) format('truetype');
+}
 
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
@@ -109,7 +163,9 @@
   --tw-contain-style: var(--tw-empty, /*!*/ /*!*/);
 }
 
-/* ! tailwindcss v3.4.19 | MIT License | https://tailwindcss.com *//*
+/*
+! tailwindcss v3.4.19 | MIT License | https://tailwindcss.com
+*//*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
 */
@@ -732,12 +788,10 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 @keyframes fadeIn {
-
   0% {
     opacity: 0;
     transform: translateY(8px);
   }
-
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -747,17 +801,14 @@ video {
   animation: fadeIn 0.45s ease-out both;
 }
 @keyframes popIn {
-
   0% {
     opacity: 0;
     transform: scale(0.6);
   }
-
   70% {
     opacity: 1;
     transform: scale(1.08);
   }
-
   100% {
     opacity: 1;
     transform: scale(1);
@@ -767,7 +818,6 @@ video {
   animation: popIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
 }
 @keyframes pulse {
-
   50% {
     opacity: .5;
   }
@@ -776,12 +826,10 @@ video {
   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 @keyframes slideLeft {
-
   0% {
     opacity: 0;
     transform: translateX(-32px);
   }
-
   100% {
     opacity: 1;
     transform: translateX(0);
@@ -791,12 +839,10 @@ video {
   animation: slideLeft 0.55s ease-out both;
 }
 @keyframes slideRight {
-
   0% {
     opacity: 0;
     transform: translateX(32px);
   }
-
   100% {
     opacity: 1;
     transform: translateX(0);
@@ -806,12 +852,10 @@ video {
   animation: slideRight 0.55s ease-out both;
 }
 @keyframes slideUp {
-
   0% {
     opacity: 0;
     transform: translateY(24px);
   }
-
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -821,7 +865,6 @@ video {
   animation: slideUp 0.5s ease-out both;
 }
 @keyframes spin {
-
   to {
     transform: rotate(360deg);
   }
@@ -830,12 +873,10 @@ video {
   animation: spin 1s linear infinite;
 }
 @keyframes stagger1 {
-
   0%, 10% {
     opacity: 0;
     transform: translateY(14px);
   }
-
   30%, 100% {
     opacity: 1;
     transform: translateY(0);
@@ -845,12 +886,10 @@ video {
   animation: stagger1 0.9s ease-out both;
 }
 @keyframes stagger2 {
-
   0%, 25% {
     opacity: 0;
     transform: translateY(14px);
   }
-
   45%, 100% {
     opacity: 1;
     transform: translateY(0);
@@ -860,12 +899,10 @@ video {
   animation: stagger2 0.9s ease-out both;
 }
 @keyframes stagger3 {
-
   0%, 40% {
     opacity: 0;
     transform: translateY(14px);
   }
-
   60%, 100% {
     opacity: 1;
     transform: translateY(0);
@@ -1160,7 +1197,7 @@ video {
   text-align: center;
 }
 .font-nixie {
-  font-family: "Golos Text", var(--font-body-family), sans-serif;
+  font-family: "Golos Text", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 .text-3xl {
   font-size: 1.875rem;
@@ -1340,7 +1377,7 @@ html, body {
   margin: 0;
   padding: 0;
   background-color: #FFFDF0;
-  font-family: "Golos Text", var(--font-body-family), system-ui, sans-serif;
+  font-family: "Golos Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
   overflow-x: hidden;
 }
 
@@ -1350,12 +1387,22 @@ html, body {
   width: 100%;
   display: block;
   background-color: #FFFDF0;
-  font-family: "Golos Text", var(--font-body-family), system-ui, sans-serif;
+  font-family: "Golos Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
 }
 
-/* Typography styles immune to Shopify 62.5% root scaling */
+/* Enforce Golos Text on all default child elements inside widget */
+#nixie-outfit-widget p,
+#nixie-outfit-widget span,
+#nixie-outfit-widget div,
+#nixie-outfit-widget input,
+#nixie-outfit-widget button,
+#nixie-outfit-widget label {
+  font-family: "Golos Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+}
+
+/* Typography styles immune to Shopify 62.5% root scaling and theme overrides */
 #nixie-outfit-widget .nixie-hero-title {
-  font-family: "DM Sans", var(--font-heading-family), sans-serif;
+  font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
   font-size: 44px !important;
   line-height: 1.15 !important;
   font-style: normal !important;
@@ -1363,7 +1410,7 @@ html, body {
 }
 
 #nixie-outfit-widget .nixie-hero-title-yellow {
-  font-family: "DM Sans", var(--font-heading-family), sans-serif;
+  font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
   font-size: 44px !important;
   line-height: 1.15 !important;
   font-style: normal !important;
@@ -1371,21 +1418,21 @@ html, body {
 }
 
 #nixie-outfit-widget .nixie-subtext {
-  font-family: "Golos Text", var(--font-body-family), sans-serif;
+  font-family: "Golos Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
   font-size: 16px !important;
   line-height: 1.6 !important;
   font-style: normal !important;
 }
 
 #nixie-outfit-widget .nixie-cta-btn {
-  font-family: "Golos Text", var(--font-body-family), sans-serif;
+  font-family: "Golos Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
   font-size: 16px !important;
   padding: 14px 32px !important;
   font-style: normal !important;
 }
 
 #nixie-outfit-widget .nixie-card-heading {
-  font-family: "DM Sans", var(--font-heading-family), sans-serif;
+  font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
   font-size: 32px !important;
   line-height: 1.2 !important;
   font-style: normal !important;
@@ -1517,50 +1564,39 @@ html, body {
 }
 
 @media (min-width: 640px) {
-
   .sm\:w-auto {
     width: auto;
   }
-
   .sm\:min-w-\[220px\] {
     min-width: 220px;
   }
-
   .sm\:min-w-\[230px\] {
     min-width: 230px;
   }
-
   .sm\:flex-initial {
     flex: 0 1 auto;
   }
-
   .sm\:flex-row {
     flex-direction: row;
   }
-
   .sm\:p-7 {
     padding: 1.75rem;
   }
-
   .sm\:p-8 {
     padding: 2rem;
   }
-
   .sm\:py-12 {
     padding-top: 3rem;
     padding-bottom: 3rem;
   }
-
   .sm\:text-4xl {
     font-size: 2.25rem;
     line-height: 2.5rem;
   }
-
   .sm\:text-base {
     font-size: 1rem;
     line-height: 1.5rem;
   }
-
   .sm\:text-sm {
     font-size: 0.875rem;
     line-height: 1.25rem;
@@ -1568,31 +1604,25 @@ html, body {
 }
 
 @media (min-width: 768px) {
-
   .md\:flex {
     display: flex;
   }
-
   .md\:hidden {
     display: none;
   }
-
   .md\:flex-row {
     flex-direction: row;
   }
 }
 
 @media (min-width: 1024px) {
-
   .lg\:p-14 {
     padding: 3.5rem;
   }
-
   .lg\:px-16 {
     padding-left: 4rem;
     padding-right: 4rem;
   }
-
   .lg\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
@@ -1600,16 +1630,13 @@ html, body {
 }
 
 @media (min-width: 1280px) {
-
   .xl\:p-16 {
     padding: 4rem;
   }
-
   .xl\:px-20 {
     padding-left: 5rem;
     padding-right: 5rem;
   }
-
   .xl\:px-24 {
     padding-left: 6rem;
     padding-right: 6rem;
