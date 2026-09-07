@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import Spinner from "./Spinner";
-import modelHero from "../assets/model-hero.jpg";
+import modelHeroMobile from "../assets/model-hero.png";
+import modelHeroDesktop from "../assets/model-hero.jpg";
 
 export default function UploadStep({ onImageSelected, loading, error }) {
   const inputRef = useRef(null);
@@ -25,15 +26,15 @@ export default function UploadStep({ onImageSelected, loading, error }) {
   return (
     <div className="w-full h-screen max-h-[768px] min-h-[550px] bg-nixieCream font-nixie flex flex-col md:flex-row overflow-hidden">
 
-      {/* ── MOBILE VIEW: Simple, natural full-image layout (Zero crop, edge-to-edge photo + clean text below) ── */}
+      {/* ── MOBILE VIEW: Natural portrait photo with top and bottom borders (matching reference exactly) ── */}
       <div className="nixie-mobile flex md:hidden flex-col h-full overflow-y-auto bg-nixieCream">
 
-        {/* Portrait framing of model on mobile with clean solid boundaries at top and bottom */}
-        <div className="w-full flex-shrink-0 border-y-[3.5px] border-nixieCyanDark overflow-hidden h-[360px] sm:h-[420px]">
+        {/* Full portrait image with clean solid boundaries at top and bottom */}
+        <div className="w-full flex-shrink-0 border-y-[3.5px] border-nixieCyanDark">
           <img
-            src={modelHero}
+            src={modelHeroMobile}
             alt="Fashion model"
-            className="w-full h-full object-cover object-[78%_center]"
+            className="w-full h-auto block"
           />
         </div>
 
@@ -128,7 +129,7 @@ export default function UploadStep({ onImageSelected, loading, error }) {
         {/* Right 50%: model photo — fills right half completely with zero gap */}
         <div className="w-1/2 h-full flex items-center justify-end bg-nixieCream animate-slideRight overflow-hidden">
           <img
-            src={modelHero}
+            src={modelHeroDesktop}
             alt="Fashion model"
             className="h-full w-full object-cover object-right-top block"
           />
