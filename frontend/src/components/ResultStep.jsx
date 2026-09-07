@@ -37,7 +37,7 @@ export default function ResultStep({ data, onContactUs, onAnalyzeAnother }) {
 
         {/* Info below */}
         <div className="flex-1 px-6 pb-8 flex flex-col justify-center animate-slideUp">
-          <h2 className="text-2xl font-normal italic text-nixieCyanDark leading-snug mb-3">
+          <h2 className="nixie-card-heading font-normal italic text-nixieCyanDark leading-snug mb-3">
             {comment}
           </h2>
 
@@ -102,7 +102,7 @@ export default function ResultStep({ data, onContactUs, onAnalyzeAnother }) {
           <div className="max-w-lg">
 
             {/* AI Comment heading */}
-            <h2 className="text-3xl lg:text-4xl font-normal italic text-nixieCyanDark leading-tight mb-6">
+            <h2 className="nixie-card-heading font-normal italic text-nixieCyanDark leading-tight mb-6">
               {comment}
             </h2>
 

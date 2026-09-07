@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import Spinner from "./Spinner";
-import modelHero from "../assets/model-hero.png";
+import modelHero from "../assets/model-hero.jpg";
 
 export default function UploadStep({ onImageSelected, loading, error }) {
   const inputRef = useRef(null);
@@ -33,20 +33,20 @@ export default function UploadStep({ onImageSelected, loading, error }) {
           <img
             src={modelHero}
             alt="Fashion model"
-            className="w-full h-auto block"
+            className="w-full h-auto block object-cover"
           />
         </div>
 
         {/* Content below image */}
         <div className="flex-1 flex flex-col justify-center px-6 pt-5 pb-8 text-center">
           <div className="max-w-sm mx-auto">
-            <h1 className="text-3xl font-bold leading-tight text-nixieCyanDark mb-1">
+            <h1 className="nixie-hero-title font-bold leading-tight text-nixieCyanDark mb-1">
               Found a look you<br />can&apos;t stop
             </h1>
-            <h1 className="text-3xl font-bold italic text-nixieYellow mb-4">
+            <h1 className="nixie-hero-title-yellow font-bold italic text-nixieYellow mb-4">
               thinking about?
             </h1>
-            <p className="text-nixieText/75 text-sm leading-relaxed mb-6">
+            <p className="nixie-subtext text-nixieText/75 leading-relaxed mb-6">
               Upload it here, we&apos;ll tell you what it&apos;ll cost to get the look at Nixie!
             </p>
 
@@ -61,7 +61,7 @@ export default function UploadStep({ onImageSelected, loading, error }) {
             <button
               type="button"
               onClick={() => mobileInputRef.current?.click()}
-              className="w-full border-2 border-nixieCyanDark text-nixieCyanDark font-medium py-3.5 rounded-none shadow-[3px_3px_0px_#F5A623] hover:bg-nixieCyanDark hover:text-white transition-all text-base active:translate-x-0.5 active:translate-y-0.5"
+              className="w-full nixie-cta-btn border-2 border-nixieCyanDark text-nixieCyanDark font-medium rounded-none shadow-[3px_3px_0px_#F5A623] hover:bg-nixieCyanDark hover:text-white transition-all active:translate-x-0.5 active:translate-y-0.5"
             >
               Show us the outfit
             </button>
@@ -76,19 +76,19 @@ export default function UploadStep({ onImageSelected, loading, error }) {
 
       </div>
 
-      {/* ── DESKTOP VIEW ── */}
-      <div className="nixie-desktop hidden md:flex w-full h-full justify-between">
+      {/* ── DESKTOP VIEW: Clean 50/50 Split (Matched to Nixie Reference) ── */}
+      <div className="nixie-desktop hidden md:flex w-full h-full">
 
-        {/* Left: headline + button */}
-        <div className="flex-1 h-full flex flex-col justify-center px-8 lg:px-16 xl:px-24 animate-slideLeft">
-          <div className="max-w-md">
-            <h1 className="text-4xl lg:text-5xl font-bold leading-tight text-nixieCyanDark mb-1">
+        {/* Left 50%: headline + button */}
+        <div className="w-1/2 h-full flex flex-col justify-center px-8 lg:px-16 xl:px-24 animate-slideLeft">
+          <div className="max-w-[480px] w-full">
+            <h1 className="nixie-hero-title font-bold leading-tight text-nixieCyanDark mb-1">
               Found a look you<br />can&apos;t stop
             </h1>
-            <h1 className="text-4xl lg:text-5xl font-bold italic text-nixieYellow mb-6">
+            <h1 className="nixie-hero-title-yellow font-bold italic text-nixieYellow mb-6">
               thinking about?
             </h1>
-            <p className="text-nixieText/75 text-base leading-relaxed mb-10">
+            <p className="nixie-subtext text-nixieText/80 leading-relaxed mb-8">
               Upload it here, we&apos;ll tell you what it&apos;ll cost to get the look at Nixie!
             </p>
 
@@ -109,7 +109,7 @@ export default function UploadStep({ onImageSelected, loading, error }) {
               <button
                 type="button"
                 onClick={() => inputRef.current?.click()}
-                className={`border-2 border-nixieCyanDark text-nixieCyanDark font-medium px-8 py-3.5 rounded-none shadow-[4px_4px_0px_#F5A623] hover:bg-nixieCyanDark hover:text-white transition-all duration-200 text-base active:translate-x-0.5 active:translate-y-0.5 ${
+                className={`nixie-cta-btn border-2 border-nixieCyanDark text-nixieCyanDark font-medium rounded-none shadow-[4px_4px_0px_#F5A623] hover:bg-nixieCyanDark hover:text-white transition-all duration-200 active:translate-x-0.5 active:translate-y-0.5 ${
                   dragActive ? "bg-nixieCyanDark text-white" : ""
                 }`}
               >
@@ -125,12 +125,12 @@ export default function UploadStep({ onImageSelected, loading, error }) {
           </div>
         </div>
 
-        {/* Right: model photo — full uncropped photo, scaled to height, flush to the right edge */}
-        <div className="h-full flex items-center justify-end shrink-0 animate-slideRight overflow-hidden">
+        {/* Right 50%: model photo — fills right half completely with zero gap */}
+        <div className="w-1/2 h-full flex items-center justify-end bg-nixieCream animate-slideRight overflow-hidden">
           <img
             src={modelHero}
             alt="Fashion model"
-            className="h-full w-auto object-contain object-right-top block"
+            className="h-full w-full object-cover object-right-top block"
           />
         </div>
 

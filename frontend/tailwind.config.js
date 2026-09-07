@@ -13,7 +13,9 @@ export default {
         nixieYellow: "#F5A623",
       },
       fontFamily: {
-        nixie: ["Poppins", "system-ui", "sans-serif"],
+        nixieHeading: ['"Proza Libre"', "var(--font-heading-family)", "serif", "sans-serif"],
+        nixieBody: ["Archivo", "var(--font-body-family)", "system-ui", "sans-serif"],
+        nixie: ["Archivo", "var(--font-body-family)", "system-ui", "sans-serif"],
       },
       borderRadius: {
         nixie: "1rem",

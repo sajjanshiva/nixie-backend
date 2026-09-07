@@ -42,7 +42,7 @@ export default function ContactForm({ data, onBack, onSubmitted }) {
   return (
     <div className="min-h-screen bg-nixieCream flex flex-col items-center justify-center px-4 py-8 sm:py-12 font-nixie">
       <div className="bg-white rounded-2xl shadow-sm border border-nixieCyan/20 p-5 sm:p-8 w-full max-w-xl animate-slideUp">
-        <h2 className="text-2xl md:text-3xl text-nixieCyanDark font-bold mb-1">Get in Touch</h2>
+        <h2 className="nixie-card-heading text-nixieCyanDark font-bold mb-1">Get in Touch</h2>
         <p className="text-sm text-nixieGray mb-6">
           Share your details and our stylist team will get back to you.
         </p>

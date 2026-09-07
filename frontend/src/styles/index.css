@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Proza+Libre:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,7 +9,7 @@ html, body {
   margin: 0;
   padding: 0;
   background-color: #FFFDF0;
-  font-family: "Poppins", system-ui, sans-serif;
+  font-family: Archivo, var(--font-body-family), system-ui, sans-serif;
   overflow-x: hidden;
 }
 
@@ -17,6 +19,49 @@ html, body {
   width: 100%;
   display: block;
   background-color: #FFFDF0;
+  font-family: Archivo, var(--font-body-family), system-ui, sans-serif;
+}
+
+/* Typography styles immune to Shopify 62.5% root scaling */
+#nixie-outfit-widget .nixie-hero-title {
+  font-family: "Proza Libre", var(--font-heading-family), serif, sans-serif;
+  font-size: 44px !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.01em;
+}
+
+#nixie-outfit-widget .nixie-hero-title-yellow {
+  font-family: "Proza Libre", var(--font-heading-family), serif, sans-serif;
+  font-size: 44px !important;
+  line-height: 1.15 !important;
+  font-style: italic;
+  letter-spacing: -0.01em;
+}
+
+#nixie-outfit-widget .nixie-subtext {
+  font-family: Archivo, var(--font-body-family), sans-serif;
+  font-size: 16px !important;
+  line-height: 1.6 !important;
+}
+
+#nixie-outfit-widget .nixie-cta-btn {
+  font-family: Archivo, var(--font-body-family), sans-serif;
+  font-size: 16px !important;
+  padding: 14px 32px !important;
+}
+
+#nixie-outfit-widget .nixie-card-heading {
+  font-family: "Proza Libre", var(--font-heading-family), serif, sans-serif;
+  font-size: 32px !important;
+  line-height: 1.2 !important;
+}
+
+@media (max-width: 767px) {
+  #nixie-outfit-widget .nixie-hero-title,
+  #nixie-outfit-widget .nixie-hero-title-yellow {
+    font-size: 30px !important;
+    line-height: 1.2 !important;
+  }
 }
 
 #nixie-outfit-widget .nixie-mobile {

@@ -50,7 +50,7 @@ export default function ThankYou({ onAnalyzeAnother }) {
 
         {/* Heading */}
         <div className="animate-stagger1 mb-8">
-          <h2 className="text-3xl sm:text-4xl font-bold text-nixieCyanDark tracking-tight mb-2">
+          <h2 className="nixie-card-heading font-bold text-nixieCyanDark tracking-tight mb-2">
             You&apos;re all set!
           </h2>
           <p className="text-nixieGray text-sm sm:text-base max-w-sm mx-auto leading-relaxed">
