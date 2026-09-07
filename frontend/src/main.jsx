@@ -5,6 +5,31 @@ import ErrorBoundary from "./components/ErrorBoundary.jsx";
 import "./styles/index.css";
 import cssText from "./styles/index.css?inline";
 
+// Auto-inject Google Fonts as a real <link> tag — @import inside dynamically injected
+// <style> tags is ignored by browsers, so we inject a proper <link> instead.
+if (typeof document !== "undefined") {
+  const fontLinkId = "nixie-google-fonts";
+  if (!document.getElementById(fontLinkId)) {
+    // Preconnect for faster loading
+    const preconn1 = document.createElement("link");
+    preconn1.rel = "preconnect";
+    preconn1.href = "https://fonts.googleapis.com";
+    document.head.appendChild(preconn1);
+
+    const preconn2 = document.createElement("link");
+    preconn2.rel = "preconnect";
+    preconn2.href = "https://fonts.gstatic.com";
+    preconn2.crossOrigin = "anonymous";
+    document.head.appendChild(preconn2);
+
+    const fontLink = document.createElement("link");
+    fontLink.id = fontLinkId;
+    fontLink.rel = "stylesheet";
+    fontLink.href = "https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Golos+Text:wght@400;500;600;700&display=swap";
+    document.head.appendChild(fontLink);
+  }
+}
+
 // Auto-inject CSS into page head so styles are guaranteed to load in Shopify
 if (typeof document !== "undefined") {
   const styleId = "nixie-widget-styles";
