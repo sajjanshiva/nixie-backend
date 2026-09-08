@@ -13,9 +13,9 @@ export default {
         nixieYellow: "#F5A623",
       },
       fontFamily: {
-        nixieHeading: ['"DM Sans"', "-apple-system", "BlinkMacSystemFont", "sans-serif"],
-        nixieBody: ['"Golos Text"', "-apple-system", "BlinkMacSystemFont", "sans-serif"],
-        nixie: ['"Golos Text"', "-apple-system", "BlinkMacSystemFont", "sans-serif"],
+        nixieHeading: ["var(--font-heading-family)", "var(--font-body-family)", "sans-serif"],
+        nixieBody: ["var(--font-body-family)", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
+        nixie: ["var(--font-body-family)", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
       },
       borderRadius: {
         nixie: "1rem",
