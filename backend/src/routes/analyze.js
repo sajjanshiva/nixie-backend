@@ -13,8 +13,10 @@ router.post("/analyze", upload.single("image"), async (req, res) => {
       return res.status(400).json({ error: "No image file uploaded (expected field name 'image')." });
     }
 
-    const { url: imageUrl } = await uploadImage(req.file.buffer, req.file.originalname, "/nixie/main-images");
-    const detection = await detectOutfitAndFabric(req.file.buffer, req.file.mimetype);
+    const [{ url: imageUrl }, detection] = await Promise.all([
+      uploadImage(req.file.buffer, req.file.originalname, "/nixie/main-images"),
+      detectOutfitAndFabric(req.file.buffer, req.file.mimetype),
+    ]);
 
     const fabrics = [
       { name: detection.primaryFabric, role: "primary" },

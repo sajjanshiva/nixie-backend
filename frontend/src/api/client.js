@@ -1,3 +1,5 @@
+import { compressImage } from "../utils/imageCompressor";
+
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000";
 
 async function handleResponse(res) {
@@ -27,8 +29,9 @@ function assertAnalyzeShape(data) {
 }
 
 export async function analyzeOutfit(file) {
+  const fileToUpload = await compressImage(file);
   const formData = new FormData();
-  formData.append("image", file);
+  formData.append("image", fileToUpload);
   const res = await fetch(`${API_BASE_URL}/api/analyze`, {
     method: "POST",
     body: formData,
